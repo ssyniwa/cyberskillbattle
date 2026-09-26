@@ -59,21 +59,21 @@ if "game_state" not in st.session_state:
   # 味方3体
   st.session_state.allies = [
     {
-        "name": "ネオン (Cyber-Ninja)",
+        "name": "詩音 (サイバーニンジャ)",
         "hp": 100,
         "max_hp": 100,
         "shield": 0,
         "alive": True,
     },
     {
-        "name": "ゼロ (Net-Runner)",
+        "name": "サイファー (スナイパー)",
         "hp": 80,
         "max_hp": 80,
         "shield": 0,
         "alive": True,
     },
     {
-        "name": "ボルト (Heavy-Borg)",
+        "name": "アイリーン (飛行攻撃アーマー)",
         "hp": 130,
         "max_hp": 130,
         "shield": 0,
