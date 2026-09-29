@@ -389,7 +389,7 @@ elif st.session_state.game_state == "BATTLE":
           )
           # 味方キャラクター画像を表示
           try:
-            st.image(a["image_path"], width=100)
+            st.image(a["image_path"], width=200)
           except Exception:
             st.caption(f"[画像読み込みエラー: {a['image_path']}]")
       else:
@@ -409,7 +409,7 @@ elif st.session_state.game_state == "BATTLE":
       )
       # 敵キャラクター画像を表示
       try:
-        st.image(e["image_path"], width=150)
+        st.image(e["image_path"], width=250)
       except Exception:
         st.caption(f"[画像読み込みエラー: {e['image_path']}]")
 
@@ -433,7 +433,7 @@ elif st.session_state.game_state == "BATTLE":
         )
         # スキル画像を表示
         try:
-          st.image(card["img"], width=80)
+          st.image(card["img"], width=200)
         except Exception:
           st.caption(f"[画像エラー: {card['img']}]")
 
