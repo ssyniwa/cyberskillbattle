@@ -58,7 +58,7 @@ st.markdown(
 )
 
 # ==========================================
-# 1. 味方キャラクターデータ (3体×10スキル)
+# 1. 味方キャラクターデータ (3体×10スキル) ※パスを全て .jpg に変更
 # ==========================================
 ALLIES_DATA = [
     {
@@ -115,8 +115,7 @@ ALLIES_DATA = [
 ]
 
 # ==========================================
-# 2. 10ステージ×7種類の個別敵データ＆環境定義
-# （ボス1体＋雑魚敵6体 ＝ 計7種類 × 10ステージ ＝ 70種類個別定義、各3スキル）
+# 2. 10ステージ×7種類の個別敵データ＆環境定義 (パスを全て .jpg に変更)
 # ==========================================
 STAGES_DATA = [
     # --- ステージ 1：アンダーシティ・スラム ---
@@ -140,13 +139,13 @@ STAGES_DATA = [
         "env_name": "ネオン・カジノ地区 (欲望と電脳の歓楽街)",
         "env_desc": "きらびやかなホログラムが明滅する歓楽街。マフィアの手先が立ち塞がる。",
         "enemies": [
-            {"name": "カジノ・セキュリティー", "image_path": "assets/e/2_1.jpg", "hp": 80, "skills": [{"name": "スタンバトン", "type": "attack", "val": 14, "img": "assets/sk/2_1_1.png"}, {"name": "ボディーブロー", "type": "attack", "val": 18, "img": "assets/sk/2_1_2.png"}, {"name": "プロテクト", "type": "buff", "val": 10, "img": "assets/sk/2_1_3.png"}]},
-            {"name": "シンジケート・ガード", "image_path": "assets/e/2_2.jpg", "hp": 85, "skills": [{"name": "サブマシンガン", "type": "attack", "val": 16, "img": "assets/sk/2_2_1.png"}, {"name": "タックル", "type": "attack", "val": 20, "img": "assets/sk/2_2_2.png"}, {"name": "防弾シールド", "type": "buff", "val": 12, "img": "assets/sk/2_2_3.png"}]},
-            {"name": "サイバー・ホステス", "image_path": "assets/e/2_3.jpg", "hp": 75, "skills": [{"name": "魅惑のリップ", "type": "attack", "val": 15, "img": "assets/sk/2_3_1.png"}, {"name": "毒入りグラス", "type": "attack", "val": 19, "img": "assets/sk/2_3_2.png"}, {"name": "錯乱フェロモン", "type": "buff", "val": 14, "img": "assets/sk/2_3_3.png"}]},
-            {"name": "カジノ・ディーラー", "image_path": "assets/e/2_4.jpg", "hp": 90, "skills": [{"name": "カードカッター", "type": "attack", "val": 17, "img": "assets/sk/2_4_1.png"}, {"name": "ルーレットボム", "type": "attack", "val": 22, "img": "assets/sk/2_4_2.png"}, {"name": "イカサマ演算", "type": "buff", "val": 15, "img": "assets/sk/2_4_3.png"}]},
-            {"name": "アンドロイド・バトラー", "image_path": "assets/e/2_5.jpg", "hp": 95, "skills": [{"name": "シルバーブレード", "type": "attack", "val": 19, "img": "assets/sk/2_5_1.png"}, {"name": "高速刺突", "type": "attack", "val": 24, "img": "assets/sk/2_5_2.png"}, {"name": "精密計算", "type": "buff", "val": 18, "img": "assets/sk/2_5_3.png"}]},
-            {"name": "マフィア・キャプテン", "image_path": "assets/e/2_6.jpg", "hp": 110, "skills": [{"name": "マグナムショット", "type": "attack", "val": 21, "img": "assets/sk/2_6_1.png"}, {"name": "近接ウィップ", "type": "attack", "val": 26, "img": "assets/sk/2_6_2.png"}, {"name": "組織の号令", "type": "buff", "val": 20, "img": "assets/sk/2_6_3.png"}]},
-            {"name": "【ボス】カジノの支配人・ドン・バネッサ", "image_path": "assets/e/2_7.jpg", "hp": 180, "skills": [{"name": "ロイヤルストレート", "type": "attack", "val": 25, "img": "assets/sk/2_7_1.png"}, {"name": "黄金の銃撃", "type": "attack", "val": 32, "img": "assets/sk/2_7_2.png"}, {"name": "カジノ・パニック", "type": "buff", "val": 25, "img": "assets/sk/2_7_3.png"}]},
+            {"name": "カジノ・セキュリティー", "image_path": "assets/e/2_1.jpg", "hp": 80, "skills": [{"name": "スタンバトン", "type": "attack", "val": 14, "img": "assets/sk/2_1_1.jpg"}, {"name": "ボディーブロー", "type": "attack", "val": 18, "img": "assets/sk/2_1_2.jpg"}, {"name": "プロテクト", "type": "buff", "val": 10, "img": "assets/sk/2_1_3.jpg"}]},
+            {"name": "シンジケート・ガード", "image_path": "assets/e/2_2.jpg", "hp": 85, "skills": [{"name": "サブマシンガン", "type": "attack", "val": 16, "img": "assets/sk/2_2_1.jpg"}, {"name": "タックル", "type": "attack", "val": 20, "img": "assets/sk/2_2_2.jpg"}, {"name": "防弾シールド", "type": "buff", "val": 12, "img": "assets/sk/2_2_3.jpg"}]},
+            {"name": "サイバー・ホステス", "image_path": "assets/e/2_3.jpg", "hp": 75, "skills": [{"name": "魅惑のリップ", "type": "attack", "val": 15, "img": "assets/sk/2_3_1.jpg"}, {"name": "毒入りグラス", "type": "attack", "val": 19, "img": "assets/sk/2_3_2.jpg"}, {"name": "錯乱フェロモン", "type": "buff", "val": 14, "img": "assets/sk/2_3_3.jpg"}]},
+            {"name": "カジノ・ディーラー", "image_path": "assets/e/2_4.jpg", "hp": 90, "skills": [{"name": "カードカッター", "type": "attack", "val": 17, "img": "assets/sk/2_4_1.jpg"}, {"name": "ルーレットボム", "type": "attack", "val": 22, "img": "assets/sk/2_4_2.jpg"}, {"name": "イカサマ演算", "type": "buff", "val": 15, "img": "assets/sk/2_4_3.jpg"}]},
+            {"name": "アンドロイド・バトラー", "image_path": "assets/e/2_5.jpg", "hp": 95, "skills": [{"name": "シルバーブレード", "type": "attack", "val": 19, "img": "assets/sk/2_5_1.jpg"}, {"name": "高速刺突", "type": "attack", "val": 24, "img": "assets/sk/2_5_2.jpg"}, {"name": "精密計算", "type": "buff", "val": 18, "img": "assets/sk/2_5_3.jpg"}]},
+            {"name": "マフィア・キャプテン", "image_path": "assets/e/2_6.jpg", "hp": 110, "skills": [{"name": "マグナムショット", "type": "attack", "val": 21, "img": "assets/sk/2_6_1.jpg"}, {"name": "近接ウィップ", "type": "attack", "val": 26, "img": "assets/sk/2_6_2.jpg"}, {"name": "組織の号令", "type": "buff", "val": 20, "img": "assets/sk/2_6_3.jpg"}]},
+            {"name": "【ボス】カジノの支配人・ドン・バネッサ", "image_path": "assets/e/2_7.jpg", "hp": 180, "skills": [{"name": "ロイヤルストレート", "type": "attack", "val": 25, "img": "assets/sk/2_7_1.jpg"}, {"name": "黄金の銃撃", "type": "attack", "val": 32, "img": "assets/sk/2_7_2.jpg"}, {"name": "カジノ・パニック", "type": "buff", "val": 25, "img": "assets/sk/2_7_3.jpg"}]},
         ],
     },
     # --- ステージ 3：ハイテク工業プラント ---
@@ -155,13 +154,13 @@ STAGES_DATA = [
         "env_name": "ハイテク工業プラント (自動化された無人工場)",
         "env_desc": "炎と蒸気が吹き出すメガコープの製造プラント。戦闘用ロボットが徘徊する。",
         "enemies": [
-            {"name": "オート・ワーカー", "image_path": "assets/e/3_1.png", "hp": 90, "skills": [{"name": "アームハンマー", "type": "attack", "val": 16, "img": "assets/sk/3_1_1.png"}, {"name": "プラズマ溶接", "type": "attack", "val": 20, "img": "assets/sk/3_1_2.png"}, {"name": "出力上昇", "type": "buff", "val": 12, "img": "assets/sk/3_1_3.png"}]},
-            {"name": "ファクトリー・ドローン", "image_path": "assets/e/3_2.png", "hp": 85, "skills": [{"name": "レーザー照射", "type": "attack", "val": 18, "img": "assets/sk/3_2_1.png"}, {"name": "突撃ドリル", "type": "attack", "val": 22, "img": "assets/sk/3_2_2.png"}, {"name": "光学迷彩", "type": "buff", "val": 15, "img": "assets/sk/3_2_3.png"}]},
-            {"name": "ウォー・ハウンド", "image_path": "assets/e/3_3.png", "hp": 100, "skills": [{"name": "超音波バイト", "type": "attack", "val": 19, "img": "assets/sk/3_3_1.png"}, {"name": "フレイムブレス", "type": "attack", "val": 24, "img": "assets/sk/3_3_2.png"}, {"name": "四肢強化", "type": "buff", "val": 16, "img": "assets/sk/3_3_3.png"}]},
-            {"name": "セキュリティ・センチネル", "image_path": "assets/e/3_4.png", "hp": 110, "skills": [{"name": "パルスキャノン", "type": "attack", "val": 21, "img": "assets/sk/3_4_1.png"}, {"name": "ショックウェーブ", "type": "attack", "val": 26, "img": "assets/sk/3_4_2.png"}, {"name": "重装アーマー", "type": "buff", "val": 20, "img": "assets/sk/3_4_3.png"}]},
-            {"name": "インダストリアル・ボット", "image_path": "assets/e/3_5.png", "hp": 120, "skills": [{"name": "クラッシャー", "type": "attack", "val": 23, "img": "assets/sk/3_5_1.png"}, {"name": "プレスアタック", "type": "attack", "val": 28, "img": "assets/sk/3_5_2.png"}, {"name": "チタンボディ", "type": "buff", "val": 22, "img": "assets/sk/3_5_3.png"}]},
-            {"name": "プラント・インスペクター", "image_path": "assets/e/3_6.png", "hp": 130, "skills": [{"name": "スキャンレーザー", "type": "attack", "val": 25, "img": "assets/sk/3_6_1.png"}, {"name": "高圧電流", "type": "attack", "val": 30, "img": "assets/sk/3_6_2.png"}, {"name": "システム分析", "type": "buff", "val": 24, "img": "assets/sk/3_6_3.png"}]},
-            {"name": "【ボス】プラント監視AI・アイアン・マザー", "image_path": "assets/e/3_7.png", "hp": 210, "skills": [{"name": "オービットレーザー", "type": "attack", "val": 28, "img": "assets/sk/3_7_1.png"}, {"name": "全方位ミサイル", "type": "attack", "val": 35, "img": "assets/sk/3_7_2.png"}, {"name": "無限増産プロトコル", "type": "buff", "val": 30, "img": "assets/sk/3_7_3.png"}]},
+            {"name": "オート・ワーカー", "image_path": "assets/e/3_1.jpg", "hp": 90, "skills": [{"name": "アームハンマー", "type": "attack", "val": 16, "img": "assets/sk/3_1_1.jpg"}, {"name": "プラズマ溶接", "type": "attack", "val": 20, "img": "assets/sk/3_1_2.jpg"}, {"name": "出力上昇", "type": "buff", "val": 12, "img": "assets/sk/3_1_3.jpg"}]},
+            {"name": "ファクトリー・ドローン", "image_path": "assets/e/3_2.jpg", "hp": 85, "skills": [{"name": "レーザー照射", "type": "attack", "val": 18, "img": "assets/sk/3_2_1.jpg"}, {"name": "突撃ドリル", "type": "attack", "val": 22, "img": "assets/sk/3_2_2.jpg"}, {"name": "光学迷彩", "type": "buff", "val": 15, "img": "assets/sk/3_2_3.jpg"}]},
+            {"name": "ウォー・ハウンド", "image_path": "assets/e/3_3.jpg", "hp": 100, "skills": [{"name": "超音波バイト", "type": "attack", "val": 19, "img": "assets/sk/3_3_1.jpg"}, {"name": "フレイムブレス", "type": "attack", "val": 24, "img": "assets/sk/3_3_2.jpg"}, {"name": "四肢強化", "type": "buff", "val": 16, "img": "assets/sk/3_3_3.jpg"}]},
+            {"name": "セキュリティ・センチネル", "image_path": "assets/e/3_4.jpg", "hp": 110, "skills": [{"name": "パルスキャノン", "type": "attack", "val": 21, "img": "assets/sk/3_4_1.jpg"}, {"name": "ショックウェーブ", "type": "attack", "val": 26, "img": "assets/sk/3_4_2.jpg"}, {"name": "重装アーマー", "type": "buff", "val": 20, "img": "assets/sk/3_4_3.jpg"}]},
+            {"name": "インダストリアル・ボット", "image_path": "assets/e/3_5.jpg", "hp": 120, "skills": [{"name": "クラッシャー", "type": "attack", "val": 23, "img": "assets/sk/3_5_1.jpg"}, {"name": "プレスアタック", "type": "attack", "val": 28, "img": "assets/sk/3_5_2.jpg"}, {"name": "チタンボディ", "type": "buff", "val": 22, "img": "assets/sk/3_5_3.jpg"}]},
+            {"name": "プラント・インスペクター", "image_path": "assets/e/3_6.jpg", "hp": 130, "skills": [{"name": "スキャンレーザー", "type": "attack", "val": 25, "img": "assets/sk/3_6_1.jpg"}, {"name": "高圧電流", "type": "attack", "val": 30, "img": "assets/sk/3_6_2.jpg"}, {"name": "システム分析", "type": "buff", "val": 24, "img": "assets/sk/3_6_3.jpg"}]},
+            {"name": "【ボス】プラント監視AI・アイアン・マザー", "image_path": "assets/e/3_7.jpg", "hp": 210, "skills": [{"name": "オービットレーザー", "type": "attack", "val": 28, "img": "assets/sk/3_7_1.jpg"}, {"name": "全方位ミサイル", "type": "attack", "val": 35, "img": "assets/sk/3_7_2.jpg"}, {"name": "無限増産プロトコル", "type": "buff", "val": 30, "img": "assets/sk/3_7_3.jpg"}]},
         ],
     },
     # --- ステージ 4：地下下水道網 ---
@@ -170,13 +169,13 @@ STAGES_DATA = [
         "env_name": "地下下水道網 (汚染物質が流れ込む暗渠)",
         "env_desc": "悪臭と毒ガスが充満する地下水路。ミュータントや廃棄されたサイボーグが潜む。",
         "enemies": [
-            {"name": "下水道のドブネズミ", "image_path": "assets/e/4_1.png", "hp": 95, "skills": [{"name": "猛毒かみつき", "type": "attack", "val": 18, "img": "assets/sk/4_1_1.png"}, {"name": "不意打ち", "type": "attack", "val": 22, "img": "assets/sk/4_1_2.png"}, {"name": "素早い身かわし", "type": "buff", "val": 15, "img": "assets/sk/4_1_3.png"}]},
-            {"name": "廃棄サイボーグ", "image_path": "assets/e/4_2.png", "hp": 110, "skills": [{"name": "錆びたソード", "type": "attack", "val": 20, "img": "assets/sk/4_2_1.png"}, {"name": "狂気の突進", "type": "attack", "val": 25, "img": "assets/sk/4_2_2.png"}, {"name": "暴走回路", "type": "buff", "val": 18, "img": "assets/sk/4_2_3.png"}]},
-            {"name": "ケミカル・スライム", "image_path": "assets/e/4_3.png", "hp": 120, "skills": [{"name": "酸の液滴", "type": "attack", "val": 22, "img": "assets/sk/4_3_1.png"}, {"name": "溶解プレス", "type": "attack", "val": 27, "img": "assets/sk/4_3_2.png"}, {"name": "弾力ボディ", "type": "buff", "val": 20, "img": "assets/sk/4_3_3.png"}]},
-            {"name": "アンダーグラウンド・ゲリラ", "image_path": "assets/e/4_4.png", "hp": 115, "skills": [{"name": "ハンドグレネード", "type": "attack", "val": 24, "img": "assets/sk/4_4_1.png"}, {"name": "アサルト射撃", "type": "attack", "val": 29, "img": "assets/sk/4_4_2.png"}, {"name": "闇夜の潜伏", "type": "buff", "val": 22, "img": "assets/sk/4_4_3.png"}]},
-            {"name": "ミュータント・ブル", "image_path": "assets/e/4_5.png", "hp": 135, "skills": [{"name": "猛角突進", "type": "attack", "val": 26, "img": "assets/sk/4_5_1.png"}, {"name": "グランドスマッシュ", "type": "attack", "val": 32, "img": "assets/sk/4_5_2.png"}, {"name": "怒涛の肉体", "type": "buff", "val": 25, "img": "assets/sk/4_5_3.png"}]},
-            {"name": "トキシック・ストーカー", "image_path": "assets/e/4_6.png", "hp": 125, "skills": [{"name": "猛毒ニードル", "type": "attack", "val": 28, "img": "assets/sk/4_6_1.png"}, {"name": "サイコネイル", "type": "attack", "val": 34, "img": "assets/sk/4_6_2.png"}, {"name": "猛毒霧発生", "type": "buff", "val": 28, "img": "assets/sk/4_6_3.png"}]},
-            {"name": "【ボス】下水道の主・バイオキメラ", "image_path": "assets/e/4_7.png", "hp": 240, "skills": [{"name": "アシッドブレス", "type": "attack", "val": 32, "img": "assets/sk/4_7_1.png"}, {"name": "触手乱打", "type": "attack", "val": 38, "img": "assets/sk/4_7_2.png"}, {"name": "超再生能力", "type": "buff", "val": 35, "img": "assets/sk/4_7_3.png"}]},
+            {"name": "下水道のドブネズミ", "image_path": "assets/e/4_1.jpg", "hp": 95, "skills": [{"name": "猛毒かみつき", "type": "attack", "val": 18, "img": "assets/sk/4_1_1.jpg"}, {"name": "不意打ち", "type": "attack", "val": 22, "img": "assets/sk/4_1_2.jpg"}, {"name": "素早い身かわし", "type": "buff", "val": 15, "img": "assets/sk/4_1_3.jpg"}]},
+            {"name": "廃棄サイボーグ", "image_path": "assets/e/4_2.jpg", "hp": 110, "skills": [{"name": "錆びたソード", "type": "attack", "val": 20, "img": "assets/sk/4_2_1.jpg"}, {"name": "狂気の突進", "type": "attack", "val": 25, "img": "assets/sk/4_2_2.jpg"}, {"name": "暴走回路", "type": "buff", "val": 18, "img": "assets/sk/4_2_3.jpg"}]},
+            {"name": "ケミカル・スライム", "image_path": "assets/e/4_3.jpg", "hp": 120, "skills": [{"name": "酸の液滴", "type": "attack", "val": 22, "img": "assets/sk/4_3_1.jpg"}, {"name": "溶解プレス", "type": "attack", "val": 27, "img": "assets/sk/4_3_2.jpg"}, {"name": "弾力ボディ", "type": "buff", "val": 20, "img": "assets/sk/4_3_3.jpg"}]},
+            {"name": "アンダーグラウンド・ゲリラ", "image_path": "assets/e/4_4.jpg", "hp": 115, "skills": [{"name": "ハンドグレネード", "type": "attack", "val": 24, "img": "assets/sk/4_4_1.jpg"}, {"name": "アサルト射撃", "type": "attack", "val": 29, "img": "assets/sk/4_4_2.jpg"}, {"name": "闇夜の潜伏", "type": "buff", "val": 22, "img": "assets/sk/4_4_3.jpg"}]},
+            {"name": "ミュータント・ブル", "image_path": "assets/e/4_5.jpg", "hp": 135, "skills": [{"name": "猛角突進", "type": "attack", "val": 26, "img": "assets/sk/4_5_1.jpg"}, {"name": "グランドスマッシュ", "type": "attack", "val": 32, "img": "assets/sk/4_5_2.jpg"}, {"name": "怒涛の肉体", "type": "buff", "val": 25, "img": "assets/sk/4_5_3.jpg"}]},
+            {"name": "トキシック・ストーカー", "image_path": "assets/e/4_6.jpg", "hp": 125, "skills": [{"name": "猛毒ニードル", "type": "attack", "val": 28, "img": "assets/sk/4_6_1.jpg"}, {"name": "サイコネイル", "type": "attack", "val": 34, "img": "assets/sk/4_6_2.jpg"}, {"name": "猛毒霧発生", "type": "buff", "val": 28, "img": "assets/sk/4_6_3.jpg"}]},
+            {"name": "【ボス】下水道の主・バイオキメラ", "image_path": "assets/e/4_7.jpg", "hp": 240, "skills": [{"name": "アシッドブレス", "type": "attack", "val": 32, "img": "assets/sk/4_7_1.jpg"}, {"name": "触手乱打", "type": "attack", "val": 38, "img": "assets/sk/4_7_2.jpg"}, {"name": "超再生能力", "type": "buff", "val": 35, "img": "assets/sk/4_7_3.jpg"}]},
         ],
     },
     # --- ステージ 5：データ・サーバータワー ---
@@ -185,13 +184,13 @@ STAGES_DATA = [
         "env_name": "データ・サーバータワー (電脳の結界要塞)",
         "env_desc": "無数のサーバーラックが並ぶ仮想と現実の交差点。ネットセキュリティが襲い来る。",
         "enemies": [
-            {"name": "アイス・ウォール", "image_path": "assets/e/5_1.png", "hp": 120, "skills": [{"name": "ファイアウォール弾", "type": "attack", "val": 23, "img": "assets/sk/5_1_1.png"}, {"name": "データクラッシュ", "type": "attack", "val": 28, "img": "assets/sk/5_1_2.png"}, {"name": "防壁展開", "type": "buff", "val": 25, "img": "assets/sk/5_1_3.png"}]},
-            {"name": "ネット・スパイダー", "image_path": "assets/e/5_2.png", "hp": 110, "skills": [{"name": "ウェブストリング", "type": "attack", "val": 25, "img": "assets/sk/5_2_1.png"}, {"name": "電脳ファング", "type": "attack", "val": 30, "img": "assets/sk/5_2_2.png"}, {"name": "網の張巡り", "type": "buff", "val": 22, "img": "assets/sk/5_2_3.png"}]},
-            {"name": "セキュリティ・アバター", "image_path": "assets/e/5_3.png", "hp": 130, "skills": [{"name": "ホログラムソード", "type": "attack", "val": 27, "img": "assets/sk/5_3_1.png"}, {"name": "ライトニングレイ", "type": "attack", "val": 33, "img": "assets/sk/5_3_2.png"}, {"name": "残像防御", "type": "buff", "val": 28, "img": "assets/sk/5_3_3.png"}]},
-            {"name": "パケット・スニファー", "image_path": "assets/e/5_4.png", "hp": 125, "skills": [{"name": "データパケット", "type": "attack", "val": 29, "img": "assets/sk/5_4_1.png"}, {"name": "情報バースト", "type": "attack", "val": 35, "img": "assets/sk/5_4_2.png"}, {"name": "トラフィック解析", "type": "buff", "val": 30, "img": "assets/sk/5_4_3.png"}]},
-            {"name": "プロキシ・サーベイヤー", "image_path": "assets/e/5_5.png", "hp": 140, "skills": [{"name": "プロキシ砲", "type": "attack", "val": 31, "img": "assets/sk/5_5_1.png"}, {"name": "リダイレクト", "type": "attack", "val": 37, "img": "assets/sk/5_5_2.png"}, {"name": "匿名化シールド", "type": "buff", "val": 32, "img": "assets/sk/5_5_3.png"}]},
-            {"name": "エリート・ハッカー", "image_path": "assets/e/5_6.png", "hp": 150, "skills": [{"name": "ゼロデイアタック", "type": "attack", "val": 33, "img": "assets/sk/5_6_1.png"}, {"name": "システムオーバー", "type": "attack", "val": 40, "img": "assets/sk/5_6_2.png"}, {"name": "ディープクラック", "type": "buff", "val": 35, "img": "assets/sk/5_6_3.png"}]},
-            {"name": "【ボス】防衛AI・ガーディアン・プライム", "image_path": "assets/e/5_7.png", "hp": 270, "skills": [{"name": "マスタージャッジメント", "type": "attack", "val": 36, "img": "assets/sk/5_7_1.png"}, {"name": "ハイパーパルス", "type": "attack", "val": 44, "img": "assets/sk/5_7_2.png"}, {"name": "絶対防壁起動", "type": "buff", "val": 40, "img": "assets/sk/5_7_3.png"}]},
+            {"name": "アイス・ウォール", "image_path": "assets/e/5_1.jpg", "hp": 120, "skills": [{"name": "ファイアウォール弾", "type": "attack", "val": 23, "img": "assets/sk/5_1_1.jpg"}, {"name": "データクラッシュ", "type": "attack", "val": 28, "img": "assets/sk/5_1_2.jpg"}, {"name": "防壁展開", "type": "buff", "val": 25, "img": "assets/sk/5_1_3.jpg"}]},
+            {"name": "ネット・スパイダー", "image_path": "assets/e/5_2.jpg", "hp": 110, "skills": [{"name": "ウェブストリング", "type": "attack", "val": 25, "img": "assets/sk/5_2_1.jpg"}, {"name": "電脳ファング", "type": "attack", "val": 30, "img": "assets/sk/5_2_2.jpg"}, {"name": "網の張巡り", "type": "buff", "val": 22, "img": "assets/sk/5_2_3.jpg"}]},
+            {"name": "セキュリティ・アバター", "image_path": "assets/e/5_3.jpg", "hp": 130, "skills": [{"name": "ホログラムソード", "type": "attack", "val": 27, "img": "assets/sk/5_3_1.jpg"}, {"name": "ライトニングレイ", "type": "attack", "val": 33, "img": "assets/sk/5_3_2.jpg"}, {"name": "残像防御", "type": "buff", "val": 28, "img": "assets/sk/5_3_3.jpg"}]},
+            {"name": "パケット・スニファー", "image_path": "assets/e/5_4.jpg", "hp": 125, "skills": [{"name": "データパケット", "type": "attack", "val": 29, "img": "assets/sk/5_4_1.jpg"}, {"name": "情報バースト", "type": "attack", "val": 35, "img": "assets/sk/5_4_2.jpg"}, {"name": "トラフィック解析", "type": "buff", "val": 30, "img": "assets/sk/5_4_3.jpg"}]},
+            {"name": "プロキシ・サーベイヤー", "image_path": "assets/e/5_5.jpg", "hp": 140, "skills": [{"name": "プロキシ砲", "type": "attack", "val": 31, "img": "assets/sk/5_5_1.jpg"}, {"name": "リダイレクト", "type": "attack", "val": 37, "img": "assets/sk/5_5_2.jpg"}, {"name": "匿名化シールド", "type": "buff", "val": 32, "img": "assets/sk/5_5_3.jpg"}]},
+            {"name": "エリート・ハッカー", "image_path": "assets/e/5_6.jpg", "hp": 150, "skills": [{"name": "ゼロデイアタック", "type": "attack", "val": 33, "img": "assets/sk/5_6_1.jpg"}, {"name": "システムオーバー", "type": "attack", "val": 40, "img": "assets/sk/5_6_2.jpg"}, {"name": "ディープクラック", "type": "buff", "val": 35, "img": "assets/sk/5_6_3.jpg"}]},
+            {"name": "【ボス】防衛AI・ガーディアン・プライム", "image_path": "assets/e/5_7.jpg", "hp": 270, "skills": [{"name": "マスタージャッジメント", "type": "attack", "val": 36, "img": "assets/sk/5_7_1.jpg"}, {"name": "ハイパーパルス", "type": "attack", "val": 44, "img": "assets/sk/5_7_2.jpg"}, {"name": "絶対防壁起動", "type": "buff", "val": 40, "img": "assets/sk/5_7_3.jpg"}]},
         ],
     },
     # --- ステージ 6：高級コーポレート街 ---
@@ -200,13 +199,13 @@ STAGES_DATA = [
         "env_name": "高級コーポレート街 (富裕層の高層ビル群)",
         "env_desc": "きらびやかな高層ガラス都市。エリート警備部隊と高級ドローンが警護する。",
         "enemies": [
-            {"name": "コープ・ガードマン", "image_path": "assets/e/6_1.png", "hp": 135, "skills": [{"name": "スマートライフル", "type": "attack", "val": 28, "img": "assets/sk/6_1_1.png"}, {"name": "スタンアレスト", "type": "attack", "val": 34, "img": "assets/sk/6_1_2.png"}, {"name": "コーポレート防壁", "type": "buff", "val": 30, "img": "assets/sk/6_1_3.png"}]},
-            {"name": "エグゼクティブ・ホーク", "image_path": "assets/e/6_2.png", "hp": 130, "skills": [{"name": "エナジーボルト", "type": "attack", "val": 30, "img": "assets/sk/6_2_1.png"}, {"name": "急降下爆撃", "type": "attack", "val": 36, "img": "assets/sk/6_2_2.png"}, {"name": "高高度レーダー", "type": "buff", "val": 28, "img": "assets/sk/6_2_3.png"}]},
-            {"name": "エリート・エンフォーサー", "image_path": "assets/e/6_3.png", "hp": 150, "skills": [{"name": "プラズマバースト", "type": "attack", "val": 32, "img": "assets/sk/6_3_1.png"}, {"name": "アサルトチャージ", "type": "attack", "val": 39, "img": "assets/sk/6_3_2.png"}, {"name": "アーマーコート", "type": "buff", "val": 35, "img": "assets/sk/6_3_3.png"}]},
-            {"name": "コーポレート・スナイパー", "image_path": "assets/e/6_4.png", "hp": 140, "skills": [{"name": "ロングレンジ", "type": "attack", "val": 34, "img": "assets/sk/6_4_1.png"}, {"name": "サイレントショット", "type": "attack", "val": 41, "img": "assets/sk/6_4_2.png"}, {"name": "ピンポイント照準", "type": "buff", "val": 33, "img": "assets/sk/6_4_3.png"}]},
-            {"name": "セキュリティ・アドバイザー", "image_path": "assets/e/6_5.png", "hp": 160, "skills": [{"name": "マインドクラッシュ", "type": "attack", "val": 36, "img": "assets/sk/6_5_1.png"}, {"name": "レイザーウィップ", "type": "attack", "val": 43, "img": "assets/sk/6_5_2.png"}, {"name": "リスクヘッジ", "type": "buff", "val": 38, "img": "assets/sk/6_5_3.png"}]},
-            {"name": "サイボーグ・ボディガード", "image_path": "assets/e/6_6.png", "hp": 175, "skills": [{"name": "ヘビーパイル", "type": "attack", "val": 38, "img": "assets/sk/6_6_1.png"}, {"name": "鉄拳制裁", "type": "attack", "val": 46, "img": "assets/sk/6_6_2.png"}, {"name": "不屈の意志", "type": "buff", "val": 42, "img": "assets/sk/6_6_3.png"}]},
-            {"name": "【ボス】治安維持本部長・ゼネラル・クロウ", "image_path": "assets/e/6_7.png", "hp": 310, "skills": [{"name": "オーダードミネーション", "type": "attack", "val": 42, "img": "assets/sk/6_7_1.png"}, {"name": "ジャッジメント砲", "type": "attack", "val": 50, "img": "assets/sk/6_7_2.png"}, {"name": "総司令発令", "type": "buff", "val": 45, "img": "assets/sk/6_7_3.png"}]},
+            {"name": "コープ・ガードマン", "image_path": "assets/e/6_1.jpg", "hp": 135, "skills": [{"name": "スマートライフル", "type": "attack", "val": 28, "img": "assets/sk/6_1_1.jpg"}, {"name": "スタンアレスト", "type": "attack", "val": 34, "img": "assets/sk/6_1_2.jpg"}, {"name": "コーポレート防壁", "type": "buff", "val": 30, "img": "assets/sk/6_1_3.jpg"}]},
+            {"name": "エグゼクティブ・ホーク", "image_path": "assets/e/6_2.jpg", "hp": 130, "skills": [{"name": "エナジーボルト", "type": "attack", "val": 30, "img": "assets/sk/6_2_1.jpg"}, {"name": "急降下爆撃", "type": "attack", "val": 36, "img": "assets/sk/6_2_2.jpg"}, {"name": "高高度レーダー", "type": "buff", "val": 28, "img": "assets/sk/6_2_3.jpg"}]},
+            {"name": "エリート・エンフォーサー", "image_path": "assets/e/6_3.jpg", "hp": 150, "skills": [{"name": "プラズマバースト", "type": "attack", "val": 32, "img": "assets/sk/6_3_1.jpg"}, {"name": "アサルトチャージ", "type": "attack", "val": 39, "img": "assets/sk/6_3_2.jpg"}, {"name": "アーマーコート", "type": "buff", "val": 35, "img": "assets/sk/6_3_3.jpg"}]},
+            {"name": "コーポレート・スナイパー", "image_path": "assets/e/6_4.jpg", "hp": 140, "skills": [{"name": "ロングレンジ", "type": "attack", "val": 34, "img": "assets/sk/6_4_1.jpg"}, {"name": "サイレントショット", "type": "attack", "val": 41, "img": "assets/sk/6_4_2.jpg"}, {"name": "ピンポイント照準", "type": "buff", "val": 33, "img": "assets/sk/6_4_3.jpg"}]},
+            {"name": "セキュリティ・アドバイザー", "image_path": "assets/e/6_5.jpg", "hp": 160, "skills": [{"name": "マインドクラッシュ", "type": "attack", "val": 36, "img": "assets/sk/6_5_1.jpg"}, {"name": "レイザーウィップ", "type": "attack", "val": 43, "img": "assets/sk/6_5_2.jpg"}, {"name": "リスクヘッジ", "type": "buff", "val": 38, "img": "assets/sk/6_5_3.jpg"}]},
+            {"name": "サイボーグ・ボディガード", "image_path": "assets/e/6_6.jpg", "hp": 175, "skills": [{"name": "ヘビーパイル", "type": "attack", "val": 38, "img": "assets/sk/6_6_1.jpg"}, {"name": "鉄拳制裁", "type": "attack", "val": 46, "img": "assets/sk/6_6_2.jpg"}, {"name": "不屈の意志", "type": "buff", "val": 42, "img": "assets/sk/6_6_3.jpg"}]},
+            {"name": "【ボス】治安維持本部長・ゼネラル・クロウ", "image_path": "assets/e/6_7.jpg", "hp": 310, "skills": [{"name": "オーダードミネーション", "type": "attack", "val": 42, "img": "assets/sk/6_7_1.jpg"}, {"name": "ジャッジメント砲", "type": "attack", "val": 50, "img": "assets/sk/6_7_2.jpg"}, {"name": "総司令発令", "type": "buff", "val": 45, "img": "assets/sk/6_7_3.jpg"}]},
         ],
     },
     # --- ステージ 7：廃墟の実験施設 ---
@@ -215,13 +214,13 @@ STAGES_DATA = [
         "env_name": "廃墟の実験施設 (禁忌の研究が行われた地)",
         "env_desc": "放棄された不気味な地下研究所。改造された異形の存在がうごめく。",
         "enemies": [
-            {"name": "プロトタイプ・オブスキュア", "image_path": "assets/e/7_1.png", "hp": 150, "skills": [{"name": "異形クロー", "type": "attack", "val": 35, "img": "assets/sk/7_1_1.png"}, {"name": "絶叫波", "type": "attack", "val": 42, "img": "assets/sk/7_1_2.png"}, {"name": "暴走活性", "type": "buff", "val": 38, "img": "assets/sk/7_1_3.png"}]},
-            {"name": "試作型サイボーグ・ゼロ", "image_path": "assets/e/7_2.png", "hp": 160, "skills": [{"name": "バーストブレード", "type": "attack", "val": 37, "img": "assets/sk/7_2_1.png"}, {"name": "超高速突進", "type": "attack", "val": 44, "img": "assets/sk/7_2_2.png"}, {"name": "冷却装置", "type": "buff", "val": 40, "img": "assets/sk/7_2_3.png"}]},
-            {"name": "バイオ・ホラー", "image_path": "assets/e/7_3.png", "hp": 170, "skills": [{"name": "アシッドスピア", "type": "attack", "val": 39, "img": "assets/sk/7_3_1.png"}, {"name": "寄生胞子", "type": "attack", "val": 47, "img": "assets/sk/7_3_2.png"}, {"name": "変異再生", "type": "buff", "val": 42, "img": "assets/sk/7_3_3.png"}]},
-            {"name": "マッド・ホムンクルス", "image_path": "assets/e/7_4.png", "hp": 165, "skills": [{"name": "ケミカルボム", "type": "attack", "val": 41, "img": "assets/sk/7_4_1.png"}, {"name": "ダークパルス", "type": "attack", "val": 49, "img": "assets/sk/7_4_2.png"}, {"name": "狂気の人形劇", "type": "buff", "val": 44, "img": "assets/sk/7_4_3.png"}]},
-            {"name": "キメラ・ハウンド", "image_path": "assets/e/7_5.png", "hp": 180, "skills": [{"name": "トリプルファング", "type": "attack", "val": 43, "img": "assets/sk/7_5_1.png"}, {"name": "ヘルファイヤー", "type": "attack", "val": 52, "img": "assets/sk/7_5_2.png"}, {"name": "獣の咆哮", "type": "buff", "val": 46, "img": "assets/sk/7_5_3.png"}]},
-            {"name": "アノマリー・エージェント", "image_path": "assets/e/7_6.png", "hp": 190, "skills": [{"name": "空間歪曲", "type": "attack", "val": 45, "img": "assets/sk/7_6_1.png"}, {"name": "ダークマター", "type": "attack", "val": 54, "img": "assets/sk/7_6_2.png"}, {"name": "次元障壁", "type": "buff", "val": 48, "img": "assets/sk/7_6_3.png"}]},
-            {"name": "【ボス】狂気の科学者・ دکتر・サイコ", "image_path": "assets/e/7_7.png", "hp": 350, "skills": [{"name": "禁断の改造ビーム", "type": "attack", "val": 48, "img": "assets/sk/7_7_1.png"}, {"name": "オーバードライブ", "type": "attack", "val": 58, "img": "assets/sk/7_7_2.png"}, {"name": "実験体解放", "type": "buff", "val": 52, "img": "assets/sk/7_7_3.png"}]},
+            {"name": "プロトタイプ・オブスキュア", "image_path": "assets/e/7_1.jpg", "hp": 150, "skills": [{"name": "異形クロー", "type": "attack", "val": 35, "img": "assets/sk/7_1_1.jpg"}, {"name": "絶叫波", "type": "attack", "val": 42, "img": "assets/sk/7_1_2.jpg"}, {"name": "暴走活性", "type": "buff", "val": 38, "img": "assets/sk/7_1_3.jpg"}]},
+            {"name": "試作型サイボーグ・ゼロ", "image_path": "assets/e/7_2.jpg", "hp": 160, "skills": [{"name": "バーストブレード", "type": "attack", "val": 37, "img": "assets/sk/7_2_1.jpg"}, {"name": "超高速突進", "type": "attack", "val": 44, "img": "assets/sk/7_2_2.jpg"}, {"name": "冷却装置", "type": "buff", "val": 40, "img": "assets/sk/7_2_3.jpg"}]},
+            {"name": "バイオ・ホラー", "image_path": "assets/e/7_3.jpg", "hp": 170, "skills": [{"name": "アシッドスピア", "type": "attack", "val": 39, "img": "assets/sk/7_3_1.jpg"}, {"name": "寄生胞子", "type": "attack", "val": 47, "img": "assets/sk/7_3_2.jpg"}, {"name": "変異再生", "type": "buff", "val": 42, "img": "assets/sk/7_3_3.jpg"}]},
+            {"name": "マッド・ホムンクルス", "image_path": "assets/e/7_4.jpg", "hp": 165, "skills": [{"name": "ケミカルボム", "type": "attack", "val": 41, "img": "assets/sk/7_4_1.jpg"}, {"name": "ダークパルス", "type": "attack", "val": 49, "img": "assets/sk/7_4_2.jpg"}, {"name": "狂気の人形劇", "type": "buff", "val": 44, "img": "assets/sk/7_4_3.jpg"}]},
+            {"name": "キメラ・ハウンド", "image_path": "assets/e/7_5.jpg", "hp": 180, "skills": [{"name": "トリプルファング", "type": "attack", "val": 43, "img": "assets/sk/7_5_1.jpg"}, {"name": "ヘルファイヤー", "type": "attack", "val": 52, "img": "assets/sk/7_5_2.jpg"}, {"name": "獣の咆哮", "type": "buff", "val": 46, "img": "assets/sk/7_5_3.jpg"}]},
+            {"name": "アノマリー・エージェント", "image_path": "assets/e/7_6.jpg", "hp": 190, "skills": [{"name": "空間歪曲", "type": "attack", "val": 45, "img": "assets/sk/7_6_1.jpg"}, {"name": "ダークマター", "type": "attack", "val": 54, "img": "assets/sk/7_6_2.jpg"}, {"name": "次元障壁", "type": "buff", "val": 48, "img": "assets/sk/7_6_3.jpg"}]},
+            {"name": "【ボス】狂気の科学者・ دکتر・サイコ", "image_path": "assets/e/7_7.jpg", "hp": 350, "skills": [{"name": "禁断の改造ビーム", "type": "attack", "val": 48, "img": "assets/sk/7_7_1.jpg"}, {"name": "オーバードライブ", "type": "attack", "val": 58, "img": "assets/sk/7_7_2.jpg"}, {"name": "実験体解放", "type": "buff", "val": 52, "img": "assets/sk/7_7_3.jpg"}]},
         ],
     },
     # --- ステージ 8：オービタル・ステーション地上発着港 ---
@@ -230,13 +229,13 @@ STAGES_DATA = [
         "env_name": "オービタル・ステーション地上発着港 (宇宙へ続くロケット基地)",
         "env_desc": "夜空へ突き出る巨大ロケット発射基地。宇宙防衛軍と重武装ユニットが立ちはだかる。",
         "enemies": [
-            {"name": "スペース・ガード", "image_path": "assets/e/8_1.png", "hp": 170, "skills": [{"name": "ビームライフル", "type": "attack", "val": 42, "img": "assets/sk/8_1_1.png"}, {"name": "グレネードランチャー", "type": "attack", "val": 50, "img": "assets/sk/8_1_2.png"}, {"name": "宇宙服シールド", "type": "buff", "val": 45, "img": "assets/sk/8_1_3.png"}]},
-            {"name": "エアロ・ファイター", "image_path": "assets/e/8_2.png", "hp": 165, "skills": [{"name": "ミサイルポッド", "type": "attack", "val": 44, "img": "assets/sk/8_2_1.png"}, {"name": "超音速アタック", "type": "attack", "val": 52, "img": "assets/sk/8_2_2.png"}, {"name": "ドッジ機動", "type": "buff", "val": 48, "img": "assets/sk/8_2_3.png"}]},
-            {"name": "ヘビー・メック", "image_path": "assets/e/8_3.png", "hp": 200, "skills": [{"name": "ガトリング砲", "type": "attack", "val": 46, "img": "assets/sk/8_3_1.png"}, {"name": "ロケットパンチ", "type": "attack", "val": 55, "img": "assets/sk/8_3_2.png"}, {"name": "チタン装甲", "type": "buff", "val": 52, "img": "assets/sk/8_3_3.png"}]},
-            {"name": "オフィサー・コマンダー", "image_path": "assets/e/8_4.png", "hp": 185, "skills": [{"name": "プラズマサーベル", "type": "attack", "val": 48, "img": "assets/sk/8_4_1.png"}, {"name": "指令ブラスト", "type": "attack", "val": 57, "img": "assets/sk/8_4_2.png"}, {"name": "戦術指揮", "type": "buff", "val": 50, "img": "assets/sk/8_4_3.png"}]},
-            {"name": "サイバー・スナイパー", "image_path": "assets/e/8_5.png", "hp": 175, "skills": [{"name": "レールガン", "type": "attack", "val": 50, "img": "assets/sk/8_5_1.png"}, {"name": "光速スナイプ", "type": "attack", "val": 60, "img": "assets/sk/8_5_2.png"}, {"name": "サーモグラフィ", "type": "buff", "val": 48, "img": "assets/sk/8_5_3.png"}]},
-            {"name": "ディフェンス・タレット", "image_path": "assets/e/8_6.png", "hp": 210, "skills": [{"name": "全方位レーザー", "type": "attack", "val": 52, "img": "assets/sk/8_6_1.png"}, {"name": "高圧パルス", "type": "attack", "val": 62, "img": "assets/sk/8_6_2.png"}, {"name": "エネルギー充填", "type": "buff", "val": 55, "img": "assets/sk/8_6_3.png"}]},
-            {"name": "【ボス】宇宙港司令官・ヴァルキリー", "image_path": "assets/e/8_7.png", "hp": 390, "skills": [{"name": "オービタルストライク", "type": "attack", "val": 56, "img": "assets/sk/8_7_1.png"}, {"name": "アブソリュートレイ", "type": "attack", "val": 66, "img": "assets/sk/8_7_2.png"}, {"name": "ハイパーバリア展開", "type": "buff", "val": 60, "img": "assets/sk/8_7_3.png"}]},
+            {"name": "スペース・ガード", "image_path": "assets/e/8_1.jpg", "hp": 170, "skills": [{"name": "ビームライフル", "type": "attack", "val": 42, "img": "assets/sk/8_1_1.jpg"}, {"name": "グレネードランチャー", "type": "attack", "val": 50, "img": "assets/sk/8_1_2.jpg"}, {"name": "宇宙服シールド", "type": "buff", "val": 45, "img": "assets/sk/8_1_3.jpg"}]},
+            {"name": "エアロ・ファイター", "image_path": "assets/e/8_2.jpg", "hp": 165, "skills": [{"name": "ミサイルポッド", "type": "attack", "val": 44, "img": "assets/sk/8_2_1.jpg"}, {"name": "超音速アタック", "type": "attack", "val": 52, "img": "assets/sk/8_2_2.jpg"}, {"name": "ドッジ機動", "type": "buff", "val": 48, "img": "assets/sk/8_2_3.jpg"}]},
+            {"name": "ヘビー・メック", "image_path": "assets/e/8_3.jpg", "hp": 200, "skills": [{"name": "ガトリング砲", "type": "attack", "val": 46, "img": "assets/sk/8_3_1.jpg"}, {"name": "ロケットパンチ", "type": "attack", "val": 55, "img": "assets/sk/8_3_2.jpg"}, {"name": "チタン装甲", "type": "buff", "val": 52, "img": "assets/sk/8_3_3.jpg"}]},
+            {"name": "オフィサー・コマンダー", "image_path": "assets/e/8_4.jpg", "hp": 185, "skills": [{"name": "プラズマサーベル", "type": "attack", "val": 48, "img": "assets/sk/8_4_1.jpg"}, {"name": "指令ブラスト", "type": "attack", "val": 57, "img": "assets/sk/8_4_2.jpg"}, {"name": "戦術指揮", "type": "buff", "val": 50, "img": "assets/sk/8_4_3.jpg"}]},
+            {"name": "サイバー・スナイパー", "image_path": "assets/e/8_5.jpg", "hp": 175, "skills": [{"name": "レールガン", "type": "attack", "val": 50, "img": "assets/sk/8_5_1.jpg"}, {"name": "光速スナイプ", "type": "attack", "val": 60, "img": "assets/sk/8_5_2.jpg"}, {"name": "サーモグラフィ", "type": "buff", "val": 48, "img": "assets/sk/8_5_3.jpg"}]},
+            {"name": "ディフェンス・タレット", "image_path": "assets/e/8_6.jpg", "hp": 210, "skills": [{"name": "全方位レーザー", "type": "attack", "val": 52, "img": "assets/sk/8_6_1.jpg"}, {"name": "高圧パルス", "type": "attack", "val": 62, "img": "assets/sk/8_6_2.jpg"}, {"name": "エネルギー充填", "type": "buff", "val": 55, "img": "assets/sk/8_6_3.jpg"}]},
+            {"name": "【ボス】宇宙港司令官・ヴァルキリー", "image_path": "assets/e/8_7.jpg", "hp": 390, "skills": [{"name": "オービタルストライク", "type": "attack", "val": 56, "img": "assets/sk/8_7_1.jpg"}, {"name": "アブソリュートレイ", "type": "attack", "val": 66, "img": "assets/sk/8_7_2.jpg"}, {"name": "ハイパーバリア展開", "type": "buff", "val": 60, "img": "assets/sk/8_7_3.jpg"}]},
         ],
     },
     # --- ステージ 9：メガコープ・タワー最上階 ---
@@ -245,13 +244,13 @@ STAGES_DATA = [
         "env_name": "メガコープ・タワー最上階 (巨大企業の心臓部)",
         "env_desc": "雲を突き抜けた超高層オフィスの最上階。企業の最終防衛システムが待ち構える。",
         "enemies": [
-            {"name": "エリート・セキュリティー", "image_path": "assets/e/9_1.png", "hp": 190, "skills": [{"name": "ナノブレード", "type": "attack", "val": 50, "img": "assets/sk/9_1_1.png"}, {"name": "パルスライフル", "type": "attack", "val": 60, "img": "assets/sk/9_1_2.png"}, {"name": "絶対防御ネット", "type": "buff", "val": 55, "img": "assets/sk/9_1_3.png"}]},
-            {"name": "コーポレート・ニンジャ", "image_path": "assets/e/9_2.png", "hp": 180, "skills": [{"name": "サイバー手裏剣", "type": "attack", "val": 53, "img": "assets/sk/9_2_1.png"}, {"name": "影渡り斬り", "type": "attack", "val": 63, "img": "assets/sk/9_2_2.png"}, {"name": "隠れ身の術", "type": "buff", "val": 52, "img": "assets/sk/9_2_3.png"}]},
-            {"name": "アンドロイド・オフィサー", "image_path": "assets/e/9_3.png", "hp": 210, "skills": [{"name": "プラズマソード", "type": "attack", "val": 56, "img": "assets/sk/9_3_1.png"}, {"name": "バーストキャノン", "type": "attack", "val": 66, "img": "assets/sk/9_3_2.png"}, {"name": "コープアーマー", "type": "buff", "val": 58, "img": "assets/sk/9_3_3.png"}]},
-            {"name": "サイバー・ガーディアン", "image_path": "assets/e/9_4.png", "hp": 230, "skills": [{"name": "ヘビーハンマー", "type": "attack", "val": 59, "img": "assets/sk/9_4_1.png"}, {"name": "ショックウェーブ", "type": "attack", "val": 69, "img": "assets/sk/9_4_2.png"}, {"name": "要塞化フィールド", "type": "buff", "val": 62, "img": "assets/sk/9_4_3.png"}]},
-            {"name": "AI・セキュリティエージェント", "image_path": "assets/e/9_5.png", "hp": 200, "skills": [{"name": "マインドバースト", "type": "attack", "val": 62, "img": "assets/sk/9_5_1.png"}, {"name": "データストーム", "type": "attack", "val": 72, "img": "assets/sk/9_5_2.png"}, {"name": "自己診断パッチ", "type": "buff", "val": 60, "img": "assets/sk/9_5_3.png"}]},
-            {"name": "エグゼクティブ・ボディーガード", "image_path": "assets/e/9_6.png", "hp": 240, "skills": [{"name": "バイオニック拳", "type": "attack", "val": 65, "img": "assets/sk/9_6_1.png"}, {"name": "超高圧ビーム", "type": "attack", "val": 75, "img": "assets/sk/9_6_2.png"}, {"name": "不屈のシールド", "type": "buff", "val": 68, "img": "assets/sk/9_6_3.png"}]},
-            {"name": "【ボス】取締役会会長・ゼウス", "image_path": "assets/e/9_7.png", "hp": 430, "skills": [{"name": "神罰の稲妻", "type": "attack", "val": 70, "img": "assets/sk/9_7_1.png"}, {"name": "メガコープジャッジ", "type": "attack", "val": 82, "img": "assets/sk/9_7_2.png"}, {"name": "神の絶対領域", "type": "buff", "val": 75, "img": "assets/sk/9_7_3.png"}]},
+            {"name": "エリート・セキュリティー", "image_path": "assets/e/9_1.jpg", "hp": 190, "skills": [{"name": "ナノブレード", "type": "attack", "val": 50, "img": "assets/sk/9_1_1.jpg"}, {"name": "パルスライフル", "type": "attack", "val": 60, "img": "assets/sk/9_1_2.jpg"}, {"name": "絶対防御ネット", "type": "buff", "val": 55, "img": "assets/sk/9_1_3.jpg"}]},
+            {"name": "コーポレート・ニンジャ", "image_path": "assets/e/9_2.jpg", "hp": 180, "skills": [{"name": "サイバー手裏剣", "type": "attack", "val": 53, "img": "assets/sk/9_2_1.jpg"}, {"name": "影渡り斬り", "type": "attack", "val": 63, "img": "assets/sk/9_2_2.jpg"}, {"name": "隠れ身の術", "type": "buff", "val": 52, "img": "assets/sk/9_2_3.jpg"}]},
+            {"name": "アンドロイド・オフィサー", "image_path": "assets/e/9_3.jpg", "hp": 210, "skills": [{"name": "プラズマソード", "type": "attack", "val": 56, "img": "assets/sk/9_3_1.jpg"}, {"name": "バーストキャノン", "type": "attack", "val": 66, "img": "assets/sk/9_3_2.jpg"}, {"name": "コープアーマー", "type": "buff", "val": 58, "img": "assets/sk/9_3_3.jpg"}]},
+            {"name": "サイバー・ガーディアン", "image_path": "assets/e/9_4.jpg", "hp": 230, "skills": [{"name": "ヘビーハンマー", "type": "attack", "val": 59, "img": "assets/sk/9_4_1.jpg"}, {"name": "ショックウェーブ", "type": "attack", "val": 69, "img": "assets/sk/9_4_2.jpg"}, {"name": "要塞化フィールド", "type": "buff", "val": 62, "img": "assets/sk/9_4_3.jpg"}]},
+            {"name": "AI・セキュリティエージェント", "image_path": "assets/e/9_5.jpg", "hp": 200, "skills": [{"name": "マインドバースト", "type": "attack", "val": 62, "img": "assets/sk/9_5_1.jpg"}, {"name": "データストーム", "type": "attack", "val": 72, "img": "assets/sk/9_5_2.jpg"}, {"name": "自己診断パッチ", "type": "buff", "val": 60, "img": "assets/sk/9_5_3.jpg"}]},
+            {"name": "エグゼクティブ・ボディーガード", "image_path": "assets/e/9_6.jpg", "hp": 240, "skills": [{"name": "バイオニック拳", "type": "attack", "val": 65, "img": "assets/sk/9_6_1.jpg"}, {"name": "超高圧ビーム", "type": "attack", "val": 75, "img": "assets/sk/9_6_2.jpg"}, {"name": "不屈のシールド", "type": "buff", "val": 68, "img": "assets/sk/9_6_3.jpg"}]},
+            {"name": "【ボス】取締役会会長・ゼウス", "image_path": "assets/e/9_7.jpg", "hp": 430, "skills": [{"name": "神罰の稲妻", "type": "attack", "val": 70, "img": "assets/sk/9_7_1.jpg"}, {"name": "メガコープジャッジ", "type": "attack", "val": 82, "img": "assets/sk/9_7_2.jpg"}, {"name": "神の絶対領域", "type": "buff", "val": 75, "img": "assets/sk/9_7_3.jpg"}]},
         ],
     },
     # --- ステージ 10：最終電脳空間・コア ---
@@ -260,13 +259,13 @@ STAGES_DATA = [
         "env_name": "最終電脳空間・コア (世界の命運を握る中枢ネット)",
         "env_desc": "現実の物理法則を超越した電脳の深淵。すべての黒幕が待つ最終決戦の地。",
         "enemies": [
-            {"name": "ダーク・プログラム", "image_path": "assets/e/10_1.png", "hp": 220, "skills": [{"name": "ブラックホール", "type": "attack", "val": 65, "img": "assets/sk/10_1_1.png"}, {"name": "バグインジェクション", "type": "attack", "val": 75, "img": "assets/sk/10_1_2.png"}, {"name": "暗黒シールド", "type": "buff", "val": 70, "img": "assets/sk/10_1_3.png"}]},
-            {"name": "ファントム・ウィルス", "image_path": "assets/e/10_2.png", "hp": 210, "skills": [{"name": "ファントムエッジ", "type": "attack", "val": 68, "img": "assets/sk/10_2_1.png"}, {"name": "精神崩壊波", "type": "attack", "val": 78, "img": "assets/sk/10_2_2.png"}, {"name": "幻影迷彩", "type": "buff", "val": 68, "img": "assets/sk/10_2_3.png"}]},
-            {"name": "オメガ・センチネル", "image_path": "assets/e/10_3.png", "hp": 250, "skills": [{"name": "オメガキャノン", "type": "attack", "val": 71, "img": "assets/sk/10_3_1.png"}, {"name": "消滅レイ", "type": "attack", "val": 82, "img": "assets/sk/10_3_2.png"}, {"name": "超硬質アーマー", "type": "buff", "val": 75, "img": "assets/sk/10_3_3.png"}]},
-            {"name": "カオス・エージェント", "image_path": "assets/e/10_4.png", "hp": 230, "skills": [{"name": "カオススラッシュ", "type": "attack", "val": 74, "img": "assets/sk/10_4_1.png"}, {"name": "空間崩壊", "type": "attack", "val": 85, "img": "assets/sk/10_4_2.png"}, {"name": "混沌の加護", "type": "buff", "val": 78, "img": "assets/sk/10_4_3.png"}]},
-            {"name": "シンギュラリティ・ボット", "image_path": "assets/e/10_5.png", "hp": 260, "skills": [{"name": "特異点バースト", "type": "attack", "val": 77, "img": "assets/sk/10_5_1.png"}, {"name": "重力プレス", "type": "attack", "val": 88, "img": "assets/sk/10_5_2.png"}, {"name": "重力制御", "type": "buff", "val": 80, "img": "assets/sk/10_5_3.png"}]},
-            {"name": "ネメシス・ガーディアン", "image_path": "assets/e/10_6.png", "hp": 280, "skills": [{"name": "ネメシスソード", "type": "attack", "val": 80, "img": "assets/sk/10_6_1.png"}, {"name": "ジャッジメントレイ", "type": "attack", "val": 92, "img": "assets/sk/10_6_2.png"}, {"name": "絶対神の障壁", "type": "buff", "val": 85, "img": "assets/sk/10_6_3.png"}]},
-            {"name": "【FINAL BOSS】全知全能のCEO・オーバーライド", "image_path": "assets/e/10_7.png", "hp": 550, "skills": [{"name": "ワールド・デリート", "type": "attack", "val": 90, "img": "assets/sk/10_7_1.png"}, {"name": "システム・オーバーロード", "type": "attack", "val": 110, "img": "assets/sk/10_7_2.png"}, {"name": "電脳神の完全無敵化", "type": "buff", "val": 100, "img": "assets/sk/10_7_3.png"}]},
+            {"name": "ダーク・プログラム", "image_path": "assets/e/10_1.jpg", "hp": 220, "skills": [{"name": "ブラックホール", "type": "attack", "val": 65, "img": "assets/sk/10_1_1.jpg"}, {"name": "バグインジェクション", "type": "attack", "val": 75, "img": "assets/sk/10_1_2.jpg"}, {"name": "暗黒シールド", "type": "buff", "val": 70, "img": "assets/sk/10_1_3.jpg"}]},
+            {"name": "ファントム・ウィルス", "image_path": "assets/e/10_2.jpg", "hp": 210, "skills": [{"name": "ファントムエッジ", "type": "attack", "val": 68, "img": "assets/sk/10_2_1.jpg"}, {"name": "精神崩壊波", "type": "attack", "val": 78, "img": "assets/sk/10_2_2.jpg"}, {"name": "幻影迷彩", "type": "buff", "val": 68, "img": "assets/sk/10_2_3.jpg"}]},
+            {"name": "オメガ・センチネル", "image_path": "assets/e/10_3.jpg", "hp": 250, "skills": [{"name": "オメガキャノン", "type": "attack", "val": 71, "img": "assets/sk/10_3_1.jpg"}, {"name": "消滅レイ", "type": "attack", "val": 82, "img": "assets/sk/10_3_2.jpg"}, {"name": "超硬質アーマー", "type": "buff", "val": 75, "img": "assets/sk/10_3_3.jpg"}]},
+            {"name": "カオス・エージェント", "image_path": "assets/e/10_4.jpg", "hp": 230, "skills": [{"name": "カオススラッシュ", "type": "attack", "val": 74, "img": "assets/sk/10_4_1.jpg"}, {"name": "空間崩壊", "type": "attack", "val": 85, "img": "assets/sk/10_4_2.jpg"}, {"name": "混沌の加護", "type": "buff", "val": 78, "img": "assets/sk/10_4_3.jpg"}]},
+            {"name": "シンギュラリティ・ボット", "image_path": "assets/e/10_5.jpg", "hp": 260, "skills": [{"name": "特異点バースト", "type": "attack", "val": 77, "img": "assets/sk/10_5_1.jpg"}, {"name": "重力プレス", "type": "attack", "val": 88, "img": "assets/sk/10_5_2.jpg"}, {"name": "重力制御", "type": "buff", "val": 80, "img": "assets/sk/10_5_3.jpg"}]},
+            {"name": "ネメシス・ガーディアン", "image_path": "assets/e/10_6.jpg", "hp": 280, "skills": [{"name": "ネメシスソード", "type": "attack", "val": 80, "img": "assets/sk/10_6_1.jpg"}, {"name": "ジャッジメントレイ", "type": "attack", "val": 92, "img": "assets/sk/10_6_2.jpg"}, {"name": "絶対神の障壁", "type": "buff", "val": 85, "img": "assets/sk/10_6_3.jpg"}]},
+            {"name": "【FINAL BOSS】全知全能のCEO・オーバーライド", "image_path": "assets/e/10_7.jpg", "hp": 550, "skills": [{"name": "ワールド・デリート", "type": "attack", "val": 90, "img": "assets/sk/10_7_1.jpg"}, {"name": "システム・オーバーロード", "type": "attack", "val": 110, "img": "assets/sk/10_7_2.jpg"}, {"name": "電脳神の完全無敵化", "type": "buff", "val": 100, "img": "assets/sk/10_7_3.jpg"}]},
         ],
     },
 ]
@@ -311,7 +310,6 @@ def start_battle():
       "desc": stage_data["env_desc"],
   }
   
-  # 各ステージのボス1体＋雑魚敵6体（計7種類）の中からランダムに1体選出して戦闘相手にする
   chosen_enemy_data = random.choice(stage_data["enemies"])
   
   st.session_state.current_enemy = {
@@ -376,23 +374,28 @@ elif st.session_state.game_state == "BATTLE":
 
   col_ally, col_enemy = st.columns(2)
 
-  # 味方ステータス
+  # 味方ステータス (キャラ画像を表示)
   with col_ally:
     st.markdown("### 🟢 味方エージェント部隊")
     for a in st.session_state.allies:
       if a["alive"]:
-        st.markdown(
-            f"""<div class="ally-box">
-                <b>{a['name']}</b><br>
-                HP: {a['hp']} / {a['max_hp']} | シールド: {a['shield']}<br>
-                <small>Img: <code>{a['image_path']}</code></small>
-                </div>""",
-            unsafe_allow_html=True,
-        )
+        with st.container():
+          st.markdown(
+              f"""<div class="ally-box">
+                  <b>{a['name']}</b><br>
+                  HP: {a['hp']} / {a['max_hp']} | シールド: {a['shield']}
+                  </div>""",
+              unsafe_allow_html=True,
+          )
+          # 味方キャラクター画像を表示
+          try:
+            st.image(a["image_path"], width=100)
+          except Exception:
+            st.caption(f"[画像読み込みエラー: {a['image_path']}]")
       else:
         st.markdown(f"<s style='color:gray;'>{a['name']} (DEFEATED)</s>", unsafe_allow_html=True)
 
-  # 敵ステータス
+  # 敵ステータス (敵画像を表示)
   with col_enemy:
     st.markdown("### 🔴 遭遇した敵ターゲット")
     e = st.session_state.current_enemy
@@ -400,16 +403,20 @@ elif st.session_state.game_state == "BATTLE":
       st.markdown(
           f"""<div class="enemy-box">
               <b>{e['name']}</b><br>
-              HP: {e['hp']} / {e['max_hp']} | シールド: {e['shield']}<br>
-              <small>Img: <code>{e['image_path']}</code></small>
+              HP: {e['hp']} / {e['max_hp']} | シールド: {e['shield']}
               </div>""",
           unsafe_allow_html=True,
       )
+      # 敵キャラクター画像を表示
+      try:
+        st.image(e["image_path"], width=150)
+      except Exception:
+        st.caption(f"[画像読み込みエラー: {e['image_path']}]")
 
   st.markdown("---")
   st.markdown(f"### 🔋 RAM (コスト): {st.session_state.ram} / {st.session_state.max_ram}")
 
-  # 手札表示
+  # 手札表示 (スキル画像を表示)
   st.markdown("### 🃏 スキルカード (手札)")
   if st.session_state.hand:
     cols = st.columns(len(st.session_state.hand))
@@ -420,11 +427,16 @@ elif st.session_state.game_state == "BATTLE":
                 <small style="color:#ff007f;">[{card['owner']}]</small><br>
                 <b>{card['name']}</b><br>
                 コスト: {card['cost']} RAM<br>
-                タイプ: {card['type']} ({card['val']})<br>
-                <small>Icon: <code>{card['img']}</code></small>
+                タイプ: {card['type']} ({card['val']})
                 </div>""",
             unsafe_allow_html=True,
         )
+        # スキル画像を表示
+        try:
+          st.image(card["img"], width=80)
+        except Exception:
+          st.caption(f"[画像エラー: {card['img']}]")
+
         if st.button("使用", key=f"card_btn_{idx}"):
           if st.session_state.ram >= card["cost"]:
             st.session_state.ram -= card["cost"]
