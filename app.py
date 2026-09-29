@@ -374,26 +374,29 @@ if st.session_state.game_state == "TITLE":
     st.rerun()
 
 elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
-  st.title(f"🎉 ステージ {st.session_state.stage} クリア！ (リペア・プロトコル)")
+  st.title(f"🎉 ステージ {st.session_state.stage} クリア！ (強化・リペアプロトコル)")
   st.markdown(
-      "ボスを撃破しました！次のステージに進む前に、**戦闘不能になった味方キャラ1人**を応急処置（復活）させることができます。"
-      "復活させたいキャラを選択するか、このままスキップしてください。"
+      "ボスを撃破しました！次のステージに進む前に、以下のいずれかのオプションを実行できます：<br>"
+      "1. **戦闘不能の味方の復活**（該当者がいる場合）<br>"
+      "2. **味方キャラ1人を選んでステータス強化**（最大HPアップ ＆ 所持スキルの効果量アップ）",
+      unsafe_allow_html=True,
   )
 
+  # 戦闘不能キャラの復活セクション
   dead_allies = [a for a in st.session_state.allies if not a["alive"]]
-
   if dead_allies:
+    st.markdown("### 💀 戦闘不能メンバーの復活")
     cols = st.columns(len(dead_allies))
     for idx, a in enumerate(dead_allies):
       with cols[idx]:
         st.markdown(
             f"""<div class="ally-box">
                 <b>{a['name']} (DEFEATED)</b><br>
-                現在の状態: 戦闘不能
+                状態: 戦闘不能
                 </div>""",
             unsafe_allow_html=True,
         )
-        if st.button(f"{a['name']} を復活させる", key=f"revive_btn_{idx}"):
+        if st.button(f"{a['name']} を復活", key=f"revive_btn_{idx}"):
           a["alive"] = True
           a["hp"] = max(1, int(a["max_hp"] * 0.5))  # HP半分で復活
           a["shield"] = 0
@@ -408,10 +411,51 @@ elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
             start_battle()
             st.session_state.game_state = "BATTLE"
           st.rerun()
-  else:
-    st.info("現在、戦闘不能の味方はいません全員生存しています！")
+    st.markdown("---")
 
-  if st.button("誰も復活させずに次のステージへ進む", use_container_width=True):
+  # 生存メンバーのステータス強化セクション
+  st.markdown("### 🚀 味方エージェントのステータス強化 (1人選択)")
+  st.markdown("お気に入りのキャラを選んで、最大HPと全スキルの威力を底上げしましょう！")
+  
+  alive_allies = [a for a in st.session_state.allies if a["alive"]]
+  if alive_allies:
+    cols_buff = st.columns(len(alive_allies))
+    for idx, a in enumerate(alive_allies):
+      with cols_buff[idx]:
+        st.markdown(
+            f"""<div class="ally-box">
+                <b>{a['name']}</b><br>
+                現在 MaxHP: {a['max_hp']}
+                </div>""",
+            unsafe_allow_html=True,
+        )
+        if st.button(f"⚡ {a['name']} を強化する", key=f"buff_btn_{idx}"):
+          # ステータス強化処理
+          hp_boost = 30
+          a["max_hp"] += hp_boost
+          a["hp"] = min(a["max_hp"], a["hp"] + hp_boost)  # 現在HPも回復
+          
+          # 所持スキルの効果量アップ（valが数値のスキルを約20%または固定値アップ）
+          for s in a["skills"]:
+            if "val" in s:
+              s["val"] = int(s["val"] * 1.25) + 3
+          
+          st.session_state.battle_log.append(
+              f"💪 {a['name']} が強化された！ (MaxHP +{hp_boost} & スキル性能向上)"
+          )
+          
+          # 次のステージへ進行
+          if st.session_state.stage >= 10:
+            st.session_state.game_state = "VICTORY"
+          else:
+            st.session_state.stage += 1
+            st.session_state.enemy_index = 0
+            start_battle()
+            st.session_state.game_state = "BATTLE"
+          st.rerun()
+
+  st.markdown("---")
+  if st.button("強化・復活を行わずに次のステージへ進む", use_container_width=True):
     if st.session_state.stage >= 10:
       st.session_state.game_state = "VICTORY"
     else:
@@ -537,7 +581,7 @@ elif st.session_state.game_state == "BATTLE":
                 st.session_state.enemy_index += 1
                 start_battle()
               else:
-                # ボス撃破時は復活選択画面へ遷移する
+                # ボス撃破時は復活・強化選択画面へ遷移する
                 st.session_state.game_state = "STAGE_CLEAR_REVIVE"
             st.rerun()
           else:
