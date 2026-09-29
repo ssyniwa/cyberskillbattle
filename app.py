@@ -292,7 +292,6 @@ if "game_state" not in st.session_state:
   st.session_state.env_info = {}
   st.session_state.hand = []
   st.session_state.battle_log = []
-  # 直近の敵の行動情報を保持するセッションステートを追加
   st.session_state.last_enemy_action = None
 
 
@@ -372,6 +371,54 @@ if st.session_state.game_state == "TITLE":
   if st.button("ゲームスタート", use_container_width=True):
     start_new_game()
     st.session_state.game_state = "BATTLE"
+    st.rerun()
+
+elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
+  st.title(f"🎉 ステージ {st.session_state.stage} クリア！ (リペア・プロトコル)")
+  st.markdown(
+      "ボスを撃破しました！次のステージに進む前に、**戦闘不能になった味方キャラ1人**を応急処置（復活）させることができます。"
+      "復活させたいキャラを選択するか、このままスキップしてください。"
+  )
+
+  dead_allies = [a for a in st.session_state.allies if not a["alive"]]
+
+  if dead_allies:
+    cols = st.columns(len(dead_allies))
+    for idx, a in enumerate(dead_allies):
+      with cols[idx]:
+        st.markdown(
+            f"""<div class="ally-box">
+                <b>{a['name']} (DEFEATED)</b><br>
+                現在の状態: 戦闘不能
+                </div>""",
+            unsafe_allow_html=True,
+        )
+        if st.button(f"{a['name']} を復活させる", key=f"revive_btn_{idx}"):
+          a["alive"] = True
+          a["hp"] = max(1, int(a["max_hp"] * 0.5))  # HP半分で復活
+          a["shield"] = 0
+          st.session_state.battle_log.append(f"✨ {a['name']} がリペアされ、HP {a['hp']} で復活した！")
+          
+          # 次のステージへ進行
+          if st.session_state.stage >= 10:
+            st.session_state.game_state = "VICTORY"
+          else:
+            st.session_state.stage += 1
+            st.session_state.enemy_index = 0
+            start_battle()
+            st.session_state.game_state = "BATTLE"
+          st.rerun()
+  else:
+    st.info("現在、戦闘不能の味方はいません全員生存しています！")
+
+  if st.button("誰も復活させずに次のステージへ進む", use_container_width=True):
+    if st.session_state.stage >= 10:
+      st.session_state.game_state = "VICTORY"
+    else:
+      st.session_state.stage += 1
+      st.session_state.enemy_index = 0
+      start_battle()
+      st.session_state.game_state = "BATTLE"
     st.rerun()
 
 elif st.session_state.game_state == "BATTLE":
@@ -484,16 +531,14 @@ elif st.session_state.game_state == "BATTLE":
             if e["hp"] <= 0:
               st.session_state.battle_log.append(f"👉 {e['name']} を撃破した！")
               st.session_state.last_enemy_action = None
+              
+              # 敵がボス（index 6）だったかどうかで分岐
               if st.session_state.enemy_index < 6:
                 st.session_state.enemy_index += 1
                 start_battle()
               else:
-                if st.session_state.stage >= 10:
-                  st.session_state.game_state = "VICTORY"
-                else:
-                  st.session_state.stage += 1
-                  st.session_state.enemy_index = 0
-                  start_battle()
+                # ボス撃破時は復活選択画面へ遷移する
+                st.session_state.game_state = "STAGE_CLEAR_REVIVE"
             st.rerun()
           else:
             st.warning("RAMが不足しています！")
@@ -506,7 +551,6 @@ elif st.session_state.game_state == "BATTLE":
         target = random.choice(alive_allies)
         dmg = eskill["val"]
 
-        # 敵が使ったスキル情報と画像情報を保持
         st.session_state.last_enemy_action = {
             "enemy_name": e["name"],
             "skill_name": eskill["name"],
