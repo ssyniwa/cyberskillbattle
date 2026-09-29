@@ -566,7 +566,7 @@ elif st.session_state.game_state == "BATTLE":
       )
     with col_l2:
       try:
-        st.image(la["skill_img"], width=120)
+        st.image(la["skill_img"], width=200)
       except Exception:
         st.caption(f"[画像エラー: {la['skill_img']}]")
 
