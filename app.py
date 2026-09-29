@@ -52,13 +52,20 @@ st.markdown(
         margin-bottom: 10px;
         font-size: 0.9em;
     }
+    .enemy-skill-box {
+        background: #3a1622;
+        border: 1px solid #ff5555;
+        padding: 8px;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
 # ==========================================
-# 1. 味方キャラクターデータ (3体×10スキル) ※パスを全て .jpg に変更
+# 1. 味方キャラクターデータ (3体×10スキル)
 # ==========================================
 ALLIES_DATA = [
     {
@@ -115,7 +122,7 @@ ALLIES_DATA = [
 ]
 
 # ==========================================
-# 2. 10ステージ×7種類の個別敵データ＆環境定義 (パスを全て .jpg に変更)
+# 2. 10ステージ×7種類の個別敵データ＆環境定義
 # ==========================================
 STAGES_DATA = [
     # --- ステージ 1：アンダーシティ・スラム ---
@@ -283,11 +290,13 @@ if "game_state" not in st.session_state:
   st.session_state.env_info = {}
   st.session_state.hand = []
   st.session_state.battle_log = []
+  st.session_state.last_enemy_skill = None  # 直近で敵が使ったスキルを保存するステート
 
 
 def start_new_game():
   st.session_state.stage = 1
   st.session_state.allies = []
+  st.session_state.last_enemy_skill = None
   for data in ALLIES_DATA:
     st.session_state.allies.append({
         "name": data["name"],
@@ -322,6 +331,7 @@ def start_battle():
   }
   st.session_state.ram = 3
   st.session_state.max_ram = 3
+  st.session_state.last_enemy_skill = None
   st.session_state.battle_log = [
       f"--- ステージ {st.session_state.stage} ({stage_data['env_name']}) 戦闘開始 ---"
   ]
@@ -387,7 +397,6 @@ elif st.session_state.game_state == "BATTLE":
                   </div>""",
               unsafe_allow_html=True,
           )
-          # 味方キャラクター画像を表示
           try:
             st.image(a["image_path"], width=200)
           except Exception:
@@ -395,7 +404,7 @@ elif st.session_state.game_state == "BATTLE":
       else:
         st.markdown(f"<s style='color:gray;'>{a['name']} (DEFEATED)</s>", unsafe_allow_html=True)
 
-  # 敵ステータス (敵画像を表示)
+  # 敵ステータス & 直近で使った敵のスキル情報・画像を表示
   with col_enemy:
     st.markdown("### 🔴 遭遇した敵ターゲット")
     e = st.session_state.current_enemy
@@ -407,11 +416,26 @@ elif st.session_state.game_state == "BATTLE":
               </div>""",
           unsafe_allow_html=True,
       )
-      # 敵キャラクター画像を表示
       try:
         st.image(e["image_path"], width=250)
       except Exception:
         st.caption(f"[画像読み込みエラー: {e['image_path']}]")
+
+      # 💡 追加：敵が使用した直近のスキル情報とスキル画像を表示するエリア
+      if st.session_state.get("last_enemy_skill"):
+        l_sk = st.session_state.last_enemy_skill
+        st.markdown(
+            f"""<div class="enemy-skill-box">
+                <small style="color:#ff9999;">【敵の直近スキル】</small><br>
+                <b>{l_sk['name']}</b><br>
+                タイプ: {l_sk['type']} (効果: {l_sk['val']})
+                </div>""",
+            unsafe_allow_html=True,
+        )
+        try:
+          st.image(l_sk["img"], width=200)
+        except Exception:
+          st.caption(f"[スキル画像エラー: {l_sk['img']}]")
 
   st.markdown("---")
   st.markdown(f"### 🔋 RAM (コスト): {st.session_state.ram} / {st.session_state.max_ram}")
@@ -431,7 +455,6 @@ elif st.session_state.game_state == "BATTLE":
                 </div>""",
             unsafe_allow_html=True,
         )
-        # スキル画像を表示
         try:
           st.image(card["img"], width=200)
         except Exception:
@@ -474,6 +497,7 @@ elif st.session_state.game_state == "BATTLE":
             # 撃破判定
             if e["hp"] <= 0:
               st.session_state.battle_log.append(f"👉 {e['name']} を撃破した！")
+              st.session_state.last_enemy_skill = None
               if st.session_state.stage >= 10:
                 st.session_state.game_state = "VICTORY"
               else:
@@ -486,6 +510,9 @@ elif st.session_state.game_state == "BATTLE":
   if st.button("ターン終了 (敵の行動へ)", use_container_width=True):
     if e["hp"] > 0:
       eskill = random.choice(e["skills"])
+      # 敵が使ったスキル情報を記録
+      st.session_state.last_enemy_skill = eskill
+
       alive_allies = [a for a in st.session_state.allies if a["alive"]]
       if alive_allies:
         target = random.choice(alive_allies)
