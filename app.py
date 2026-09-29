@@ -52,13 +52,21 @@ st.markdown(
         margin-bottom: 10px;
         font-size: 0.9em;
     }
+    .enemy-skill-log {
+        background: #2b131a;
+        border: 1px dashed #ff3333;
+        padding: 8px;
+        border-radius: 6px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
 # ==========================================
-# 1. 味方キャラクターデータ (3体×10スキル) ※パスを全て .jpg に変更
+# 1. 味方キャラクターデータ (3体×10スキル)
 # ==========================================
 ALLIES_DATA = [
     {
@@ -115,7 +123,7 @@ ALLIES_DATA = [
 ]
 
 # ==========================================
-# 2. 10ステージ×7種類の個別敵データ＆環境定義 (パスを全て .jpg に変更)
+# 2. 10ステージ×7種類の個別敵データ＆環境定義
 # ==========================================
 STAGES_DATA = [
     # --- ステージ 1：アンダーシティ・スラム ---
@@ -276,7 +284,7 @@ STAGES_DATA = [
 if "game_state" not in st.session_state:
   st.session_state.game_state = "TITLE"
   st.session_state.stage = 1
-  st.session_state.enemy_index = 0  # ステージ内の何番目の敵か (0〜6)
+  st.session_state.enemy_index = 0
   st.session_state.ram = 3
   st.session_state.max_ram = 3
   st.session_state.allies = []
@@ -284,6 +292,8 @@ if "game_state" not in st.session_state:
   st.session_state.env_info = {}
   st.session_state.hand = []
   st.session_state.battle_log = []
+  # 直近の敵の行動情報を保持するセッションステートを追加
+  st.session_state.last_enemy_action = None
 
 
 def start_new_game():
@@ -300,6 +310,7 @@ def start_new_game():
         "alive": True,
         "skills": data["skills"],
     })
+  st.session_state.last_enemy_action = None
   start_battle()
 
 
@@ -312,7 +323,6 @@ def start_battle():
       "desc": stage_data["env_desc"],
   }
   
-  # リストの順番通りに敵を呼び出す（全7体を順に戦う）
   e_idx = min(st.session_state.enemy_index, len(stage_data["enemies"]) - 1)
   chosen_enemy_data = stage_data["enemies"][e_idx]
   
@@ -329,6 +339,7 @@ def start_battle():
   st.session_state.battle_log = [
       f"--- ステージ {st.session_state.stage} ({stage_data['env_name']}) : 敵 {st.session_state.enemy_index + 1}/7 【{chosen_enemy_data['name']}】出現 ---"
   ]
+  st.session_state.last_enemy_action = None
   draw_cards()
 
 
@@ -366,7 +377,6 @@ if st.session_state.game_state == "TITLE":
 elif st.session_state.game_state == "BATTLE":
   st.title(f"⚡ STAGE {st.session_state.stage} / 10  (敵 {st.session_state.enemy_index + 1} / 7)")
 
-  # 環境情報バナーの表示
   env = st.session_state.env_info
   st.markdown(
       f"""<div class="env-box">
@@ -378,7 +388,7 @@ elif st.session_state.game_state == "BATTLE":
 
   col_ally, col_enemy = st.columns(2)
 
-  # 味方ステータス (キャラ画像を表示)
+  # 味方ステータス
   with col_ally:
     st.markdown("### 🟢 味方エージェント部隊")
     for a in st.session_state.allies:
@@ -391,7 +401,6 @@ elif st.session_state.game_state == "BATTLE":
                   </div>""",
               unsafe_allow_html=True,
           )
-          # 味方キャラクター画像を表示
           try:
             st.image(a["image_path"], width=200)
           except Exception:
@@ -399,7 +408,7 @@ elif st.session_state.game_state == "BATTLE":
       else:
         st.markdown(f"<s style='color:gray;'>{a['name']} (DEFEATED)</s>", unsafe_allow_html=True)
 
-  # 敵ステータス (敵画像を表示)
+  # 敵ステータス
   with col_enemy:
     st.markdown("### 🔴 遭遇した敵ターゲット")
     e = st.session_state.current_enemy
@@ -409,9 +418,8 @@ elif st.session_state.game_state == "BATTLE":
               <b>{e['name']}</b><br>
               HP: {e['hp']} / {e['max_hp']} | シールド: {e['shield']}
               </div>""",
-          unsafe_allow_html=True,
+              unsafe_allow_html=True,
       )
-      # 敵キャラクター画像を表示
       try:
         st.image(e["image_path"], width=250)
       except Exception:
@@ -420,7 +428,7 @@ elif st.session_state.game_state == "BATTLE":
   st.markdown("---")
   st.markdown(f"### 🔋 RAM (コスト): {st.session_state.ram} / {st.session_state.max_ram}")
 
-  # 手札表示 (スキル画像を表示)
+  # 手札表示
   st.markdown("### 🃏 スキルカード (手札)")
   if st.session_state.hand:
     cols = st.columns(len(st.session_state.hand))
@@ -435,7 +443,6 @@ elif st.session_state.game_state == "BATTLE":
                 </div>""",
             unsafe_allow_html=True,
         )
-        # スキル画像を表示
         try:
           st.image(card["img"], width=200)
         except Exception:
@@ -445,7 +452,6 @@ elif st.session_state.game_state == "BATTLE":
           if st.session_state.ram >= card["cost"]:
             st.session_state.ram -= card["cost"]
 
-            # 効果処理
             if card["type"] == "attack":
               e["hp"] -= card["val"]
               st.session_state.battle_log.append(
@@ -475,15 +481,13 @@ elif st.session_state.game_state == "BATTLE":
 
             st.session_state.hand.pop(idx)
 
-            # 撃破判定
             if e["hp"] <= 0:
               st.session_state.battle_log.append(f"👉 {e['name']} を撃破した！")
-              # ステージ内の次の敵へ、または次のステージへ
+              st.session_state.last_enemy_action = None
               if st.session_state.enemy_index < 6:
                 st.session_state.enemy_index += 1
                 start_battle()
               else:
-                # 7体（ボス）を倒したら次のステージへ
                 if st.session_state.stage >= 10:
                   st.session_state.game_state = "VICTORY"
                 else:
@@ -501,6 +505,15 @@ elif st.session_state.game_state == "BATTLE":
       if alive_allies:
         target = random.choice(alive_allies)
         dmg = eskill["val"]
+
+        # 敵が使ったスキル情報と画像情報を保持
+        st.session_state.last_enemy_action = {
+            "enemy_name": e["name"],
+            "skill_name": eskill["name"],
+            "skill_type": eskill["type"],
+            "skill_val": eskill["val"],
+            "skill_img": eskill["img"],
+        }
 
         st.session_state.battle_log.append(
             f"🔴 {e['name']} は 【{eskill['name']}】 を使用した！"
@@ -536,6 +549,26 @@ elif st.session_state.game_state == "BATTLE":
     st.session_state.ram = st.session_state.max_ram
     draw_cards()
     st.rerun()
+
+  # 敵の直前使用スキル情報と画像の表示欄
+  if st.session_state.last_enemy_action:
+    la = st.session_state.last_enemy_action
+    st.markdown("### 💥 敵の直前スキル発動")
+    col_l1, col_l2 = st.columns([2, 1])
+    with col_l1:
+      st.markdown(
+          f"""<div class="enemy-skill-log">
+              <b>【敵スキル】 {la['skill_name']}</b><br>
+              使用敵: {la['enemy_name']}<br>
+              タイプ: {la['skill_type']} (効果量: {la['skill_val']})
+              </div>""",
+          unsafe_allow_html=True,
+      )
+    with col_l2:
+      try:
+        st.image(la["skill_img"], width=120)
+      except Exception:
+        st.caption(f"[画像エラー: {la['skill_img']}]")
 
   # バトルログ
   st.markdown("### 📜 バトルログ")
