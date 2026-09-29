@@ -435,7 +435,7 @@ elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
           a["max_hp"] += hp_boost
           a["hp"] = min(a["max_hp"], a["hp"] + hp_boost)  # 現在HPも回復
           
-          # 所持スキルの効果量アップ（valが数値のスキルを約20%または固定値アップ）
+          # 所持スキルの効果量アップ
           for s in a["skills"]:
             if "val" in s:
               s["val"] = int(s["val"] * 1.25) + 3
@@ -479,7 +479,7 @@ elif st.session_state.game_state == "BATTLE":
 
   col_ally, col_enemy = st.columns(2)
 
-  # 味方ステータス
+  # 味方ステータス（プログレスバー追加）
   with col_ally:
     st.markdown("### 🟢 味方エージェント部隊")
     for a in st.session_state.allies:
@@ -492,6 +492,10 @@ elif st.session_state.game_state == "BATTLE":
                   </div>""",
               unsafe_allow_html=True,
           )
+          # HPプログレスバー
+          hp_ratio = max(0.0, min(1.0, a["hp"] / a["max_hp"]))
+          st.progress(hp_ratio)
+          
           try:
             st.image(a["image_path"], width=200)
           except Exception:
@@ -499,7 +503,7 @@ elif st.session_state.game_state == "BATTLE":
       else:
         st.markdown(f"<s style='color:gray;'>{a['name']} (DEFEATED)</s>", unsafe_allow_html=True)
 
-  # 敵ステータス
+  # 敵ステータス（プログレスバー追加）
   with col_enemy:
     st.markdown("### 🔴 遭遇した敵ターゲット")
     e = st.session_state.current_enemy
@@ -511,6 +515,10 @@ elif st.session_state.game_state == "BATTLE":
               </div>""",
               unsafe_allow_html=True,
       )
+      # 敵HPプログレスバー
+      enemy_hp_ratio = max(0.0, min(1.0, e["hp"] / e["max_hp"]))
+      st.progress(enemy_hp_ratio)
+
       try:
         st.image(e["image_path"], width=250)
       except Exception:
@@ -537,7 +545,7 @@ elif st.session_state.game_state == "BATTLE":
         try:
           st.image(card["img"], width=200)
         except Exception:
-          st.caption(f"[画像エラー: {card['img']}]")
+            st.caption(f"[画像エラー: {card['img']}]")
 
         if st.button("使用", key=f"card_btn_{idx}"):
           if st.session_state.ram >= card["cost"]:
@@ -576,12 +584,10 @@ elif st.session_state.game_state == "BATTLE":
               st.session_state.battle_log.append(f"👉 {e['name']} を撃破した！")
               st.session_state.last_enemy_action = None
               
-              # 敵がボス（index 6）だったかどうかで分岐
               if st.session_state.enemy_index < 6:
                 st.session_state.enemy_index += 1
                 start_battle()
               else:
-                # ボス撃破時は復活・強化選択画面へ遷移する
                 st.session_state.game_state = "STAGE_CLEAR_REVIVE"
             st.rerun()
           else:
@@ -592,7 +598,11 @@ elif st.session_state.game_state == "BATTLE":
       eskill = random.choice(e["skills"])
       alive_allies = [a for a in st.session_state.allies if a["alive"]]
       if alive_allies:
-        target = random.choice(alive_allies)
+        # ★【戦略性の追加】HPが最も低い味方キャラを優先してターゲットにする（同値の時はランダム）
+        min_hp = min(a["hp"] for a in alive_allies)
+        lowest_hp_allies = [a for a in alive_allies if a["hp"] == min_hp]
+        target = random.choice(lowest_hp_allies)
+        
         dmg = eskill["val"]
 
         st.session_state.last_enemy_action = {
@@ -616,7 +626,7 @@ elif st.session_state.game_state == "BATTLE":
             target["shield"] = 0
             target["hp"] -= dmg
           st.session_state.battle_log.append(
-              f"   -> {target['name']} に {eskill['val']} のダメージ！"
+              f"   -> [最優先標的] {target['name']} に {eskill['val']} のダメージ！"
           )
         elif eskill["type"] == "buff":
           e["shield"] += eskill["val"]
