@@ -69,6 +69,14 @@ st.markdown(
         font-weight: bold;
         margin-bottom: 10px;
     }
+    .score-box {
+        background: #16213e;
+        border: 2px solid #00ffcc;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -132,10 +140,9 @@ ALLIES_DATA = [
 ]
 
 # ==========================================
-# 2. 10ステージ×7種類の個別敵データ＆環境定義 (一部スキルに pierce: True を追加)
+# 2. 10ステージ×7種類の個別敵データ＆環境定義
 # ==========================================
 STAGES_DATA = [
-    # --- ステージ 1：アンダーシティ・スラム ---
     {
         "stage": 1,
         "env_name": "アンダーシティ・スラム (酸性雨降る底辺街)",
@@ -150,7 +157,6 @@ STAGES_DATA = [
             {"name": "【ボス】スラムの暴力王・ガレオン", "image_path": "assets/e/1_7.jpg", "hp": 150, "skills": [{"name": "ガトリング乱射", "type": "attack", "val": 22, "pierce": False, "img": "assets/sk/1_7_1.jpg"}, {"name": "メガトンプレス", "type": "attack", "val": 28, "pierce": True, "img": "assets/sk/1_7_2.jpg"}, {"name": "狂戦士の咆哮", "type": "buff", "val": 20, "img": "assets/sk/1_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 2：ネオン・カジノ地区 ---
     {
         "stage": 2,
         "env_name": "ネオン・カジノ地区 (欲望と電脳の歓楽街)",
@@ -165,7 +171,6 @@ STAGES_DATA = [
             {"name": "【ボス】カジノの支配人・ドン・バネッサ", "image_path": "assets/e/2_7.jpg", "hp": 180, "skills": [{"name": "ロイヤルストレート", "type": "attack", "val": 25, "pierce": False, "img": "assets/sk/2_7_1.jpg"}, {"name": "黄金の銃撃", "type": "attack", "val": 32, "pierce": True, "img": "assets/sk/2_7_2.jpg"}, {"name": "カジノ・パニック", "type": "buff", "val": 25, "img": "assets/sk/2_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 3：ハイテク工業プラント ---
     {
         "stage": 3,
         "env_name": "ハイテク工業プラント (自動化された無人工場)",
@@ -180,7 +185,6 @@ STAGES_DATA = [
             {"name": "【ボス】プラント監視AI・アイアン・マザー", "image_path": "assets/e/3_7.jpg", "hp": 210, "skills": [{"name": "オービットレーザー", "type": "attack", "val": 28, "pierce": False, "img": "assets/sk/3_7_1.jpg"}, {"name": "全方位ミサイル", "type": "attack", "val": 35, "pierce": True, "img": "assets/sk/3_7_2.jpg"}, {"name": "無限増産プロトコル", "type": "buff", "val": 30, "img": "assets/sk/3_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 4：地下下水道網 ---
     {
         "stage": 4,
         "env_name": "地下下水道網 (汚染物質が流れ込む暗渠)",
@@ -195,7 +199,6 @@ STAGES_DATA = [
             {"name": "【ボス】下水道の主・バイオキメラ", "image_path": "assets/e/4_7.jpg", "hp": 240, "skills": [{"name": "アシッドブレス", "type": "attack", "val": 32, "pierce": True, "img": "assets/sk/4_7_1.jpg"}, {"name": "触手乱打", "type": "attack", "val": 38, "pierce": False, "img": "assets/sk/4_7_2.jpg"}, {"name": "超再生能力", "type": "buff", "val": 35, "img": "assets/sk/4_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 5：データ・サーバータワー ---
     {
         "stage": 5,
         "env_name": "データ・サーバータワー (電脳の結界要塞)",
@@ -210,7 +213,6 @@ STAGES_DATA = [
             {"name": "【ボス】防衛AI・ガーディアン・プライム", "image_path": "assets/e/5_7.jpg", "hp": 270, "skills": [{"name": "マスタージャッジメント", "type": "attack", "val": 36, "pierce": False, "img": "assets/sk/5_7_1.jpg"}, {"name": "ハイパーパルス", "type": "attack", "val": 44, "pierce": True, "img": "assets/sk/5_7_2.jpg"}, {"name": "絶対防壁起動", "type": "buff", "val": 40, "img": "assets/sk/5_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 6：高級コーポレート街 ---
     {
         "stage": 6,
         "env_name": "高級コーポレート街 (富裕層の高層ビル群)",
@@ -225,7 +227,6 @@ STAGES_DATA = [
             {"name": "【ボス】治安維持本部長・ゼネラル・クロウ", "image_path": "assets/e/6_7.jpg", "hp": 310, "skills": [{"name": "オーダードミネーション", "type": "attack", "val": 42, "pierce": False, "img": "assets/sk/6_7_1.jpg"}, {"name": "ジャッジメント砲", "type": "attack", "val": 50, "pierce": True, "img": "assets/sk/6_7_2.jpg"}, {"name": "総司令発令", "type": "buff", "val": 45, "img": "assets/sk/6_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 7：廃墟の実験施設 ---
     {
         "stage": 7,
         "env_name": "廃墟の実験施設 (禁忌の研究が行われた地)",
@@ -240,7 +241,6 @@ STAGES_DATA = [
             {"name": "【ボス】狂気の科学者・ دکتر・サイコ", "image_path": "assets/e/7_7.jpg", "hp": 350, "skills": [{"name": "禁断の改造ビーム", "type": "attack", "val": 48, "pierce": False, "img": "assets/sk/7_7_1.jpg"}, {"name": "オーバードライブ", "type": "attack", "val": 58, "pierce": True, "img": "assets/sk/7_7_2.jpg"}, {"name": "実験体解放", "type": "buff", "val": 52, "img": "assets/sk/7_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 8：オービタル・ステーション地上発着港 ---
     {
         "stage": 8,
         "env_name": "オービタル・ステーション地上発着港 (宇宙へ続くロケット基地)",
@@ -255,7 +255,6 @@ STAGES_DATA = [
             {"name": "【ボス】宇宙港司令官・ヴァルキリー", "image_path": "assets/e/8_7.jpg", "hp": 390, "skills": [{"name": "オービタルストライク", "type": "attack", "val": 56, "pierce": False, "img": "assets/sk/8_7_1.jpg"}, {"name": "アブソリュートレイ", "type": "attack", "val": 66, "pierce": True, "img": "assets/sk/8_7_2.jpg"}, {"name": "ハイパーバリア展開", "type": "buff", "val": 60, "img": "assets/sk/8_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 9：メガコープ・タワー最上階 ---
     {
         "stage": 9,
         "env_name": "メガコープ・タワー最上階 (巨大企業の心臓部)",
@@ -270,7 +269,6 @@ STAGES_DATA = [
             {"name": "【ボス】取締役会会長・ゼウス", "image_path": "assets/e/9_7.jpg", "hp": 430, "skills": [{"name": "神罰の稲妻", "type": "attack", "val": 70, "pierce": False, "img": "assets/sk/9_7_1.jpg"}, {"name": "メガコープジャッジ", "type": "attack", "val": 82, "pierce": True, "img": "assets/sk/9_7_2.jpg"}, {"name": "神の絶対領域", "type": "buff", "val": 75, "img": "assets/sk/9_7_3.jpg"}]},
         ],
     },
-    # --- ステージ 10：最終電脳空間・コア ---
     {
         "stage": 10,
         "env_name": "最終電脳空間・コア (世界の命運を握る中枢ネット)",
@@ -302,12 +300,14 @@ if "game_state" not in st.session_state:
   st.session_state.hand = []
   st.session_state.battle_log = []
   st.session_state.last_enemy_action = None
+  st.session_state.all_three_alive_turns = 0  # 味方3体全員が生存していた累計ターン数
 
 
 def start_new_game():
   st.session_state.stage = 1
   st.session_state.enemy_index = 0
   st.session_state.allies = []
+  st.session_state.all_three_alive_turns = 0
   for data in ALLIES_DATA:
     st.session_state.allies.append({
         "name": data["name"],
@@ -365,6 +365,33 @@ def draw_cards():
     st.session_state.hand = random.sample(pool, min(4, len(pool)))
   else:
     st.session_state.hand = []
+
+
+# 評価点とランクの計算関数
+def calculate_score():
+  # クリアステージ数 (完全クリア時は10、途中敗北時は 現在のステージ - 1 などを考慮)
+  stages_cleared = st.session_state.stage if st.session_state.game_state == "VICTORY" else max(0, st.session_state.stage - 1)
+  alive_turns = st.session_state.all_three_alive_turns
+  
+  # スコア算出式: (クリアステージ数 * 1500) + (3体全員生存ターン数 * 200)
+  score = (stages_cleared * 1500) + (alive_turns * 200)
+  
+  if st.session_state.game_state == "VICTORY":
+    score += 5000  # 完全クリアボーナス
+    
+  # ランク判定
+  if score >= 25000:
+    rank = "S (LEGENDARY CYBER RUNNER)"
+  elif score >= 18000:
+    rank = "A (ELITE HACKER)"
+  elif score >= 10000:
+    rank = "B (VETERAN OPERATOR)"
+  elif score >= 5000:
+    rank = "C (SURVIVOR)"
+  else:
+    rank = "D (ROOKIE)"
+    
+  return stages_cleared, alive_turns, score, rank
 
 
 # ==========================================
@@ -439,12 +466,10 @@ elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
             unsafe_allow_html=True,
         )
         if st.button(f"⚡ {a['name']} を強化する", key=f"buff_btn_{idx}"):
-          # ステータス強化処理
           hp_boost = 30
           a["max_hp"] += hp_boost
-          a["hp"] = min(a["max_hp"], a["hp"] + hp_boost)  # 現在HPも回復
+          a["hp"] = min(a["max_hp"], a["hp"] + hp_boost)
           
-          # 所持スキルの効果量アップ
           for s in a["skills"]:
             if "val" in s:
               s["val"] = int(s["val"] * 1.25) + 3
@@ -453,7 +478,6 @@ elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
               f"💪 {a['name']} が強化された！ (MaxHP +{hp_boost} & スキル性能向上)"
           )
           
-          # 次のステージへ進行
           if st.session_state.stage >= 10:
             st.session_state.game_state = "VICTORY"
           else:
@@ -488,7 +512,6 @@ elif st.session_state.game_state == "BATTLE":
 
   e = st.session_state.current_enemy
 
-  # ★【機能追加】この敵が貫通攻撃を持っているかをチェックし、警告を表示する
   has_pierce_skill = any(s.get("type") == "attack" and s.get("pierce", False) for s in e["skills"])
   if has_pierce_skill:
     st.markdown(
@@ -612,6 +635,11 @@ elif st.session_state.game_state == "BATTLE":
             st.warning("RAMが不足しています！")
 
   if st.button("ターン終了 (敵の行動へ)", use_container_width=True):
+    # ターン終了時の生存チェック (味方3体全員が生存しているか)
+    all_three_alive = all(a["alive"] for a in st.session_state.allies)
+    if all_three_alive:
+      st.session_state.all_three_alive_turns += 1
+
     if e["hp"] > 0:
       eskill = random.choice(e["skills"])
       alive_allies = [a for a in st.session_state.allies if a["alive"]]
@@ -639,13 +667,11 @@ elif st.session_state.game_state == "BATTLE":
 
         if eskill["type"] == "attack":
           if is_pierce:
-            # 防御（シールド）を完全に無視してHPへ直接ダメージ
             target["hp"] -= dmg
             st.session_state.battle_log.append(
                 f"   -> [最優先標的] {target['name']} は防御を貫通され、直接 {dmg} のダメージを受けた！"
             )
           else:
-            # 通常攻撃（シールド削りあり）
             if target["shield"] >= dmg:
               target["shield"] -= dmg
               dmg = 0
@@ -702,16 +728,31 @@ elif st.session_state.game_state == "BATTLE":
   st.markdown("### 📜 バトルログ")
   st.text("\n".join(reversed(st.session_state.battle_log[-5:])))
 
-elif st.session_state.game_state == "VICTORY":
-  st.title("🏆 ミッション完全クリア (VICTORY)")
-  st.markdown("すべての異なる環境を突破し、メガコープの網からサイバーシティを解放しました！")
-  if st.button("タイトルに戻る", use_container_width=True):
-    st.session_state.game_state = "TITLE"
-    st.rerun()
+elif st.session_state.game_state in ["VICTORY", "GAMEOVER"]:
+  # 評価点・リザルト画面
+  is_win = (st.session_state.game_state == "VICTORY")
+  st.title("🏆 ミッション完全クリア (VICTORY)" if is_win else "💀 システムクラッシュ (GAME OVER)")
+  st.markdown("すべての異なる環境を突破しました！" if is_win else "エージェント部隊が全滅しました...")
 
-elif st.session_state.game_state == "GAMEOVER":
-  st.title("💀 システムクラッシュ (GAME OVER)")
-  st.markdown("エージェント部隊が全滅しました...")
+  # スコア算出
+  stages_cleared, alive_turns, score, rank = calculate_score()
+
+  st.markdown(
+      f"""
+      <div class="score-box">
+          <h2>📊 プレイ評価スコア</h2>
+          <hr style="border-color: #00ffcc;">
+          <h1 style="color: #ff007f; font-size: 2.5em;">{score:,} pt</h1>
+          <h3>評価ランク: <span style="color: #ffcc00;">{rank}</span></h3>
+          <p style="margin-top: 15px; font-size: 1.1em;">
+            クリアステージ数: <b>{stages_cleared} / 10</b> ステージ<br>
+            味方3体全員の生存ターン数: <b>{alive_turns}</b> ターン
+          </p>
+      </div>
+      """,
+      unsafe_allow_html=True,
+  )
+
   if st.button("タイトルに戻る", use_container_width=True):
     st.session_state.game_state = "TITLE"
     st.rerun()
