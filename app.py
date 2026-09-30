@@ -52,6 +52,14 @@ st.markdown(
         margin-bottom: 10px;
         font-size: 0.9em;
     }
+    .story-box {
+        background: #121826;
+        border: 2px solid #00ffcc;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
     .enemy-skill-log {
         background: #2b131a;
         border: 1px dashed #ff3333;
@@ -147,6 +155,15 @@ STAGES_DATA = [
         "stage": 1,
         "env_name": "アンダーシティ・スラム (酸性雨降る底辺街)",
         "env_desc": "視界不良のスラム街。錆びついた治安維持ドローンやギャングが襲い来る。",
+        "prev_boss_name": "なし",
+        "story_intro": (
+            "深夜のアンダーシティ。冷たい酸性雨が降り注ぐ中、治安部隊として夜勤についていた"
+            "詩音、サイファー、アイリーンの3人は、無線から不穏な緊急通報を受信した。\n\n"
+            "『こちらスラム外縁部……何者かが治安ネットワークをハッキングし、暴徒を扇動している！急行せよ！』\n\n"
+            "「夜更けの仕事はこれだから面倒さね」とアイリーンが銃口を点検し、"
+            "サイファーが遠方の敵影をスコープにとらえる。詩音は静かに刀の柄に手を掛けた。"
+            "3人はサイバーバイクを起動し、事件の渦中へと走り出した。"
+        ),
         "enemies": [
             {"name": "スクラップ・ドローン", "image_path": "assets/e/1_1.jpg", "hp": 60, "skills": [{"name": "電撃スパーク", "type": "attack", "val": 10, "pierce": False, "img": "assets/sk/1_1_1.jpg"}, {"name": "体当たり", "type": "attack", "val": 14, "pierce": False, "img": "assets/sk/1_1_2.jpg"}, {"name": "自己防壁", "type": "buff", "val": 5, "img": "assets/sk/1_1_3.jpg"}]},
             {"name": "ストリート・プンク", "image_path": "assets/e/1_2.jpg", "hp": 70, "skills": [{"name": "鉄パイプ殴打", "type": "attack", "val": 12, "pierce": False, "img": "assets/sk/1_2_1.jpg"}, {"name": "飛び蹴り", "type": "attack", "val": 15, "pierce": False, "img": "assets/sk/1_2_2.jpg"}, {"name": "挑発", "type": "buff", "val": 8, "img": "assets/sk/1_2_3.jpg"}]},
@@ -161,6 +178,14 @@ STAGES_DATA = [
         "stage": 2,
         "env_name": "ネオン・カジノ地区 (欲望と電脳の歓楽街)",
         "env_desc": "きらびやかなホログラムが明滅する歓楽街。マフィアの手先が立ち塞がる。",
+        "prev_boss_name": "スラムの暴力王・ガレオン",
+        "story_intro": (
+            "スラム街の奥深くで「スラムの暴力王・ガレオン」を沈黙させた3人。\n"
+            "ガレオンが残した端末のデータから、一連の事件の黒幕がネオン輝く歓楽街の裏で糸を引いていることが判明した。\n\n"
+            "「どうやらお次は華やかなカジノ地区のご招待ってわけだ」\n\n"
+            "きらびやかなホログラム看板が視界を埋め尽くすカジノ地区へとバイクを飛ばし、"
+            "3人はマフィアの支配する不夜城へと潜入を開始する。"
+        ),
         "enemies": [
             {"name": "カジノ・セキュリティー", "image_path": "assets/e/2_1.jpg", "hp": 80, "skills": [{"name": "スタンバトン", "type": "attack", "val": 14, "pierce": False, "img": "assets/sk/2_1_1.jpg"}, {"name": "ボディーブロー", "type": "attack", "val": 18, "pierce": False, "img": "assets/sk/2_1_2.jpg"}, {"name": "プロテクト", "type": "buff", "val": 10, "img": "assets/sk/2_1_3.jpg"}]},
             {"name": "シンジケート・ガード", "image_path": "assets/e/2_2.jpg", "hp": 85, "skills": [{"name": "サブマシンガン", "type": "attack", "val": 16, "pierce": False, "img": "assets/sk/2_2_1.jpg"}, {"name": "タックル", "type": "attack", "val": 20, "pierce": False, "img": "assets/sk/2_2_2.jpg"}, {"name": "防弾シールド", "type": "buff", "val": 12, "img": "assets/sk/2_2_3.jpg"}]},
@@ -175,6 +200,13 @@ STAGES_DATA = [
         "stage": 3,
         "env_name": "ハイテク工業プラント (自動化された無人工場)",
         "env_desc": "炎と蒸気が吹き出すメガコープの製造プラント。戦闘用ロボットが徘徊する。",
+        "prev_boss_name": "カジノの支配人・ドン・バネッサ",
+        "story_intro": (
+            "華やかなカジノの奥で「ドン・バネッサ」を追い詰め、組織の隠し口座情報を押さえた3人。\n"
+            "資金の流れを追うと、街外れのメガコープ直営プラントへと繋がっていた。\n\n"
+            "「ふん、あんな成金マフィアの背後には、でかい企業の影があったってわけね」\n\n"
+            "ネオンの街をあとにして、熱気と金属音が響き渡る巨大工業プラントへ足を踏み入れる。"
+        ),
         "enemies": [
             {"name": "オート・ワーカー", "image_path": "assets/e/3_1.jpg", "hp": 90, "skills": [{"name": "アームハンマー", "type": "attack", "val": 16, "pierce": False, "img": "assets/sk/3_1_1.jpg"}, {"name": "プラズマ溶接", "type": "attack", "val": 20, "pierce": False, "img": "assets/sk/3_1_2.jpg"}, {"name": "出力上昇", "type": "buff", "val": 12, "img": "assets/sk/3_1_3.jpg"}]},
             {"name": "ファクトリー・ドローン", "image_path": "assets/e/3_2.jpg", "hp": 85, "skills": [{"name": "レーザー照射", "type": "attack", "val": 18, "pierce": True, "img": "assets/sk/3_2_1.jpg"}, {"name": "突撃ドリル", "type": "attack", "val": 22, "pierce": False, "img": "assets/sk/3_2_2.jpg"}, {"name": "光学迷彩", "type": "buff", "val": 15, "img": "assets/sk/3_2_3.jpg"}]},
@@ -189,6 +221,13 @@ STAGES_DATA = [
         "stage": 4,
         "env_name": "地下下水道網 (汚染物質が流れ込む暗渠)",
         "env_desc": "悪臭と毒ガスが充満する地下水路。ミュータントや廃棄されたサイボーグが潜む。",
+        "prev_boss_name": "プラント監視AI・アイアン・マザー",
+        "story_intro": (
+            "暴走する「アイアン・マザー」の中枢コアを破壊し、プラントの機能を停止させた3人。\n"
+            "プラントから排泄される不正廃棄物のルートを辿ると、都市の地下迷宮へと続いていた。\n\n"
+            "「機械のクズどもを片付けたら、今度はドブネズミの匂いか。ご苦労なこったね」\n\n"
+            "悪臭が鼻をつく地下下水道網へ下降し、汚染された暗渠に潜む脅威を排除するため進軍する。"
+        ),
         "enemies": [
             {"name": "下水道のドブネズミ", "image_path": "assets/e/4_1.jpg", "hp": 95, "skills": [{"name": "猛毒かみつき", "type": "attack", "val": 18, "pierce": True, "img": "assets/sk/4_1_1.jpg"}, {"name": "不意打ち", "type": "attack", "val": 22, "pierce": False, "img": "assets/sk/4_1_2.jpg"}, {"name": "素早い身かわし", "type": "buff", "val": 15, "img": "assets/sk/4_1_3.jpg"}]},
             {"name": "廃棄サイボーグ", "image_path": "assets/e/4_2.jpg", "hp": 110, "skills": [{"name": "錆びたソード", "type": "attack", "val": 20, "pierce": False, "img": "assets/sk/4_2_1.jpg"}, {"name": "狂気の突進", "type": "attack", "val": 25, "pierce": False, "img": "assets/sk/4_2_2.jpg"}, {"name": "暴走回路", "type": "buff", "val": 18, "img": "assets/sk/4_2_3.jpg"}]},
@@ -203,6 +242,13 @@ STAGES_DATA = [
         "stage": 5,
         "env_name": "データ・サーバータワー (電脳の結界要塞)",
         "env_desc": "無数のサーバーラックが並ぶ仮想と現実の交差点。ネットセキュリティが襲い来る。",
+        "prev_boss_name": "下水道の主・バイオキメラ",
+        "story_intro": (
+            "地下水路の奥で「バイオキメラ」を討伐した3人。\n"
+            "その肉片から回収された暗号キーは、都市のデータ通信中枢であるタワーへアクセスするためのものだった。\n\n"
+            "「なるほど、地下水路はただの隠れ蓑。本丸のネットワークはここってわけね」\n\n"
+            "タワーの防壁を突破するため、3人は電脳の結界要塞へとダイブする。"
+        ),
         "enemies": [
             {"name": "アイス・ウォール", "image_path": "assets/e/5_1.jpg", "hp": 120, "skills": [{"name": "ファイアウォール弾", "type": "attack", "val": 23, "pierce": False, "img": "assets/sk/5_1_1.jpg"}, {"name": "データクラッシュ", "type": "attack", "val": 28, "pierce": False, "img": "assets/sk/5_1_2.jpg"}, {"name": "防壁展開", "type": "buff", "val": 25, "img": "assets/sk/5_1_3.jpg"}]},
             {"name": "ネット・スパイダー", "image_path": "assets/e/5_2.jpg", "hp": 110, "skills": [{"name": "ウェブストリング", "type": "attack", "val": 25, "pierce": True, "img": "assets/sk/5_2_1.jpg"}, {"name": "電脳ファング", "type": "attack", "val": 30, "pierce": False, "img": "assets/sk/5_2_2.jpg"}, {"name": "網の張巡り", "type": "buff", "val": 22, "img": "assets/sk/5_2_3.jpg"}]},
@@ -217,6 +263,13 @@ STAGES_DATA = [
         "stage": 6,
         "env_name": "高級コーポレート街 (富裕層の高層ビル群)",
         "env_desc": "きらびやかな高層ガラス都市。エリート警備部隊と高級ドローンが警護する。",
+        "prev_boss_name": "防衛AI・ガーディアン・プライム",
+        "story_intro": (
+            "データタワーの守護者「ガーディアン・プライム」をハッキングで打ち破った3人。\n"
+            "タワーから抽出されたログは、富裕層が暮らす高級コーポレート街のビルへと繋がっていた。\n\n"
+            "「いよいよお大尽どものお膝元か。治安部隊の権限を使って踏み込んでやろうじゃないか」\n\n"
+            "高級ガラス都市の輝く高層ビル群へ向け、部隊の誇りを胸に歩みを進める。"
+        ),
         "enemies": [
             {"name": "コープ・ガードマン", "image_path": "assets/e/6_1.jpg", "hp": 135, "skills": [{"name": "スマートライフル", "type": "attack", "val": 28, "pierce": False, "img": "assets/sk/6_1_1.jpg"}, {"name": "スタンアレスト", "type": "attack", "val": 34, "pierce": True, "img": "assets/sk/6_1_2.jpg"}, {"name": "コーポレート防壁", "type": "buff", "val": 30, "img": "assets/sk/6_1_3.jpg"}]},
             {"name": "エグゼクティブ・ホーク", "image_path": "assets/e/6_2.jpg", "hp": 130, "skills": [{"name": "エナジーボルト", "type": "attack", "val": 30, "pierce": False, "img": "assets/sk/6_2_1.jpg"}, {"name": "急降下爆撃", "type": "attack", "val": 36, "pierce": False, "img": "assets/sk/6_2_2.jpg"}, {"name": "高高度レーダー", "type": "buff", "val": 28, "img": "assets/sk/6_2_3.jpg"}]},
@@ -231,6 +284,13 @@ STAGES_DATA = [
         "stage": 7,
         "env_name": "廃墟の実験施設 (禁忌の研究が行われた地)",
         "env_desc": "放棄された不気味な地下研究所。改造された異形の存在がうごめく。",
+        "prev_boss_name": "治安維持本部長・ゼネラル・クロウ",
+        "story_intro": (
+            "腐敗した治安維持本部長「ゼネラル・クロウ」を撃破した3人。\n"
+            "クロウが遺した機密ファイルには、都市の裏で行われていた禁忌の改造実験の記録が記されていた。\n\n"
+            "「まさか、本部長自身がこんな悍ましい実験に関わっていたなんてね……」\n\n"
+            "真実を暴くため、3人は荒れ果てた廃墟の実験施設へと潜入する。"
+        ),
         "enemies": [
             {"name": "プロトタイプ・オブスキュア", "image_path": "assets/e/7_1.jpg", "hp": 150, "skills": [{"name": "異形クロー", "type": "attack", "val": 35, "pierce": True, "img": "assets/sk/7_1_1.jpg"}, {"name": "絶叫波", "type": "attack", "val": 42, "pierce": False, "img": "assets/sk/7_1_2.jpg"}, {"name": "暴走活性", "type": "buff", "val": 38, "img": "assets/sk/7_1_3.jpg"}]},
             {"name": "試作型サイボーグ・ゼロ", "image_path": "assets/e/7_2.jpg", "hp": 160, "skills": [{"name": "バーストブレード", "type": "attack", "val": 37, "pierce": False, "img": "assets/sk/7_2_1.jpg"}, {"name": "超高速突進", "type": "attack", "val": 44, "pierce": True, "img": "assets/sk/7_2_2.jpg"}, {"name": "冷却装置", "type": "buff", "val": 40, "img": "assets/sk/7_2_3.jpg"}]},
@@ -245,6 +305,13 @@ STAGES_DATA = [
         "stage": 8,
         "env_name": "オービタル・ステーション地上発着港 (宇宙へ続くロケット基地)",
         "env_desc": "夜空へ突き出る巨大ロケット発射基地。宇宙防衛軍と重武装ユニットが立ちはだかる。",
+        "prev_boss_name": "狂気の科学者・ دکتر・サイコ",
+        "story_intro": (
+            "実験施設の奥で「Dr.サイコ」の野望を粉砕した3人。\n"
+            "研究所のメインモニターには、宇宙へ向けて飛び立つロケットの打ち上げシークエンスが表示されていた。\n\n"
+            "「黒幕は地上だけにとどまらず、宇宙へ逃げ込む気ってわけかい！」\n\n"
+            "発射管制塔を制圧すべく、3人はオービタル・ステーション地上発着港へと急行する。"
+        ),
         "enemies": [
             {"name": "スペース・ガード", "image_path": "assets/e/8_1.jpg", "hp": 170, "skills": [{"name": "ビームライフル", "type": "attack", "val": 42, "pierce": False, "img": "assets/sk/8_1_1.jpg"}, {"name": "グレネードランチャー", "type": "attack", "val": 50, "pierce": True, "img": "assets/sk/8_1_2.jpg"}, {"name": "宇宙服シールド", "type": "buff", "val": 45, "img": "assets/sk/8_1_3.jpg"}]},
             {"name": "エアロ・ファイター", "image_path": "assets/e/8_2.jpg", "hp": 165, "skills": [{"name": "ミサイルポッド", "type": "attack", "val": 44, "pierce": True, "img": "assets/sk/8_2_1.jpg"}, {"name": "超音速アタック", "type": "attack", "val": 52, "pierce": False, "img": "assets/sk/8_2_2.jpg"}, {"name": "ドッジ機動", "type": "buff", "val": 48, "img": "assets/sk/8_2_3.jpg"}]},
@@ -259,6 +326,13 @@ STAGES_DATA = [
         "stage": 9,
         "env_name": "メガコープ・タワー最上階 (巨大企業の心臓部)",
         "env_desc": "雲を突き抜けた超高層オフィスの最上階。企業の最終防衛システムが待ち構える。",
+        "prev_boss_name": "宇宙港司令官・ヴァルキリー",
+        "story_intro": (
+            "宇宙港で「ヴァルキリー」を退け、発射されたシャトルのアクセス権を奪還した3人。\n"
+            "すべての黒幕が潜む、メガコープの本社タワー最上階へと進路を定めた。\n\n"
+            "「ここまで来れば、あとはトップを引きずり出すだけだね」\n\n"
+            "雲を突き抜ける超高層オフィスの最上階へ向け、最後の地上決戦へ突入する。"
+        ),
         "enemies": [
             {"name": "エリート・セキュリティー", "image_path": "assets/e/9_1.jpg", "hp": 190, "skills": [{"name": "ナノブレード", "type": "attack", "val": 50, "pierce": True, "img": "assets/sk/9_1_1.jpg"}, {"name": "パルスライフル", "type": "attack", "val": 60, "pierce": False, "img": "assets/sk/9_1_2.jpg"}, {"name": "絶対防御ネット", "type": "buff", "val": 55, "img": "assets/sk/9_1_3.jpg"}]},
             {"name": "コーポレート・ニンジャ", "image_path": "assets/e/9_2.jpg", "hp": 180, "skills": [{"name": "サイバー手裏剣", "type": "attack", "val": 53, "pierce": False, "img": "assets/sk/9_2_1.jpg"}, {"name": "影渡り斬り", "type": "attack", "val": 63, "pierce": True, "img": "assets/sk/9_2_2.jpg"}, {"name": "隠れ身の術", "type": "buff", "val": 52, "img": "assets/sk/9_2_3.jpg"}]},
@@ -273,6 +347,13 @@ STAGES_DATA = [
         "stage": 10,
         "env_name": "最終電脳空間・コア (世界の命運を握る中枢ネット)",
         "env_desc": "現実の物理法則を超越した電脳の深淵。すべての黒幕が待つ最終決戦の地。",
+        "prev_boss_name": "取締役会会長・ゼウス",
+        "story_intro": (
+            "メガコープ会長「ゼウス」の肉体を追い詰めたものの、彼の意識は都市の中枢ネットへ逃走した。\n"
+            "物質世界を離れ、現実の物理法則を超越した電脳の深淵へダイブする3人。\n\n"
+            "「これが最後の舞台か。……行くよ、二人とも！」\n\n"
+            "世界すべての命運を賭け、電脳の神に等しい黒幕を討つための最終決戦が始まる。"
+        ),
         "enemies": [
             {"name": "ダーク・プログラム", "image_path": "assets/e/10_1.jpg", "hp": 220, "skills": [{"name": "ブラックホール", "type": "attack", "val": 65, "pierce": True, "img": "assets/sk/10_1_1.jpg"}, {"name": "バグインジェクション", "type": "attack", "val": 75, "pierce": False, "img": "assets/sk/10_1_2.jpg"}, {"name": "暗黒シールド", "type": "buff", "val": 70, "img": "assets/sk/10_1_3.jpg"}]},
             {"name": "ファントム・ウィルス", "image_path": "assets/e/10_2.jpg", "hp": 210, "skills": [{"name": "ファントムエッジ", "type": "attack", "val": 68, "pierce": False, "img": "assets/sk/10_2_1.jpg"}, {"name": "精神崩壊波", "type": "attack", "val": 78, "pierce": True, "img": "assets/sk/10_2_2.jpg"}, {"name": "幻影迷彩", "type": "buff", "val": 68, "img": "assets/sk/10_2_3.jpg"}]},
@@ -300,7 +381,7 @@ if "game_state" not in st.session_state:
   st.session_state.hand = []
   st.session_state.battle_log = []
   st.session_state.last_enemy_action = None
-  st.session_state.all_three_alive_turns = 0  # 味方3体全員が生存していた累計ターン数
+  st.session_state.all_three_alive_turns = 0
 
 
 def start_new_game():
@@ -319,7 +400,8 @@ def start_new_game():
         "skills": data["skills"],
     })
   st.session_state.last_enemy_action = None
-  start_battle()
+  # 新規ゲーム時はステージ1のストーリー確認画面へ
+  st.session_state.game_state = "STAGE_STORY"
 
 
 def start_battle():
@@ -329,6 +411,8 @@ def start_battle():
   st.session_state.env_info = {
       "name": stage_data["env_name"],
       "desc": stage_data["env_desc"],
+      "story_intro": stage_data["story_intro"],
+      "prev_boss_name": stage_data["prev_boss_name"],
   }
   
   e_idx = min(st.session_state.enemy_index, len(stage_data["enemies"]) - 1)
@@ -369,17 +453,14 @@ def draw_cards():
 
 # 評価点とランクの計算関数
 def calculate_score():
-  # クリアステージ数 (完全クリア時は10、途中敗北時は 現在のステージ - 1 などを考慮)
   stages_cleared = st.session_state.stage if st.session_state.game_state == "VICTORY" else max(0, st.session_state.stage - 1)
   alive_turns = st.session_state.all_three_alive_turns
   
-  # スコア算出式: (クリアステージ数 * 1500) + (3体全員生存ターン数 * 200)
   score = (stages_cleared * 1500) + (alive_turns * 200)
   
   if st.session_state.game_state == "VICTORY":
-    score += 5000  # 完全クリアボーナス
+    score += 5000
     
-  # ランク判定
   if score >= 25000:
     rank = "S (LEGENDARY CYBER RUNNER)"
   elif score >= 18000:
@@ -406,6 +487,35 @@ if st.session_state.game_state == "TITLE":
   )
   if st.button("ゲームスタート", use_container_width=True):
     start_new_game()
+    st.rerun()
+
+elif st.session_state.game_state == "STAGE_STORY":
+  # 各ステージ開始時の物語・導入表示画面
+  s_idx = min(st.session_state.stage - 1, len(STAGES_DATA) - 1)
+  s_data = STAGES_DATA[s_idx]
+  
+  st.title(f"📖 STAGE {st.session_state.stage} 開幕ストーリー")
+  
+  if st.session_state.stage > 1:
+    st.markdown(
+        f"""<div class="story-box" style="border-color: #ff007f;">
+            <b>【前ステージボス撃破 ＆ 移動完了】</b><br><br>
+            前ステージにて<b>「{s_data['prev_boss_name']}」</b>を撃破した詩音、サイファー、アイリーンの3人。<br>
+            死闘の痕跡を後にし、新たな任務地である<b>「{s_data['env_name']}」</b>へと移動を完了した。
+            </div>""",
+        unsafe_allow_html=True,
+    )
+    
+  st.markdown(
+      f"""<div class="story-box">
+          <b>🌐 ステージ {st.session_state.stage}: {s_data['env_name']}</b><br><br>
+          {s_data['story_intro']}
+          </div>""",
+      unsafe_allow_html=True,
+  )
+  
+  if st.button("戦闘エリアへ突入する", use_container_width=True):
+    start_battle()
     st.session_state.game_state = "BATTLE"
     st.rerun()
 
@@ -434,18 +544,16 @@ elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
         )
         if st.button(f"{a['name']} を復活", key=f"revive_btn_{idx}"):
           a["alive"] = True
-          a["hp"] = max(1, int(a["max_hp"] * 0.5))  # HP半分で復活
+          a["hp"] = max(1, int(a["max_hp"] * 0.5))
           a["shield"] = 0
           st.session_state.battle_log.append(f"✨ {a['name']} がリペアされ、HP {a['hp']} で復活した！")
           
-          # 次のステージへ進行
           if st.session_state.stage >= 10:
             st.session_state.game_state = "VICTORY"
           else:
             st.session_state.stage += 1
             st.session_state.enemy_index = 0
-            start_battle()
-            st.session_state.game_state = "BATTLE"
+            st.session_state.game_state = "STAGE_STORY"
           st.rerun()
     st.markdown("---")
 
@@ -483,19 +591,17 @@ elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
           else:
             st.session_state.stage += 1
             st.session_state.enemy_index = 0
-            start_battle()
-            st.session_state.game_state = "BATTLE"
+            st.session_state.game_state = "STAGE_STORY"
           st.rerun()
 
   st.markdown("---")
-  if st.button("強化・復活を行わずに次のステージへ進む", use_container_width=True):
+  if st.button("強化・復活を行わずに次へ進む", use_container_width=True):
     if st.session_state.stage >= 10:
       st.session_state.game_state = "VICTORY"
     else:
       st.session_state.stage += 1
       st.session_state.enemy_index = 0
-      start_battle()
-      st.session_state.game_state = "BATTLE"
+      st.session_state.game_state = "STAGE_STORY"
     st.rerun()
 
 elif st.session_state.game_state == "BATTLE":
@@ -635,7 +741,6 @@ elif st.session_state.game_state == "BATTLE":
             st.warning("RAMが不足しています！")
 
   if st.button("ターン終了 (敵の行動へ)", use_container_width=True):
-    # ターン終了時の生存チェック (味方3体全員が生存しているか)
     all_three_alive = all(a["alive"] for a in st.session_state.allies)
     if all_three_alive:
       st.session_state.all_three_alive_turns += 1
@@ -702,7 +807,6 @@ elif st.session_state.game_state == "BATTLE":
     draw_cards()
     st.rerun()
 
-  # 敵の直前使用スキル情報と画像の表示欄
   if st.session_state.last_enemy_action:
     la = st.session_state.last_enemy_action
     st.markdown("### 💥 敵の直前スキル発動")
@@ -724,17 +828,29 @@ elif st.session_state.game_state == "BATTLE":
       except Exception:
         st.caption(f"[画像エラー: {la['skill_img']}]")
 
-  # バトルログ
   st.markdown("### 📜 バトルログ")
   st.text("\n".join(reversed(st.session_state.battle_log[-5:])))
 
 elif st.session_state.game_state in ["VICTORY", "GAMEOVER"]:
-  # 評価点・リザルト画面
   is_win = (st.session_state.game_state == "VICTORY")
   st.title("🏆 ミッション完全クリア (VICTORY)" if is_win else "💀 システムクラッシュ (GAME OVER)")
-  st.markdown("すべての異なる環境を突破しました！" if is_win else "エージェント部隊が全滅しました...")
+  
+  if is_win:
+    st.markdown(
+        """
+        <div class="story-box" style="border-color: #00ffcc; margin-bottom: 20px;">
+            <h3 style="color: #00ffcc; margin-top: 0;">📖 物語の結末：電脳の夜明け</h3>
+            最終電脳空間の深淵にて、全知全能を自称するCEO「オーバーライド」の全システムを粉砕した詩音、サイファー、アイリーン。<br><br>
+            暴走していたメガコープの中枢ネットは静まり返り、アンダーシティから高層コーポレート街に至るまで、都市全体を覆っていた悪質な支配プログラムがすべて消去されていった。<br><br>
+            「……ふう、ようやく終わったね。長かった夜勤も、これでおしまいさ」<br><br>
+            夜明けを迎えたサイバーシティの空に、眩い本当の朝日が昇る。治安部隊として誇り高き戦いをやり遂げた3人のエージェントは、それぞれのバイクに跨がり、新たな日常へと走り出した――。
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+  else:
+    st.markdown("エージェント部隊が全滅しました...")
 
-  # スコア算出
   stages_cleared, alive_turns, score, rank = calculate_score()
 
   st.markdown(
