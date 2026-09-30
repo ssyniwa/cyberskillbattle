@@ -517,7 +517,7 @@ elif st.session_state.game_state == "STAGE_STORY":
   # ストーリー用画像の表示
   if "story_image" in s_data:
     try:
-      st.image(s_data["story_image"], use_column_width=True)
+      st.image(s_data["story_image"], use_container_width=True)
     except Exception:
       st.caption(f"[ストーリー画像読み込みエラー: {s_data['story_image']}]")
 
