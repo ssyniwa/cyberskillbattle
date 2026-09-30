@@ -148,7 +148,7 @@ ALLIES_DATA = [
 ]
 
 # ==========================================
-# 2. 10ステージ×7種類の個別敵データ＆環境定義
+# 2. 10ステージ×7種類の個別敵データ＆環境・ストーリー定義
 # ==========================================
 STAGES_DATA = [
     {
@@ -156,6 +156,7 @@ STAGES_DATA = [
         "env_name": "アンダーシティ・スラム (酸性雨降る底辺街)",
         "env_desc": "視界不良のスラム街。錆びついた治安維持ドローンやギャングが襲い来る。",
         "prev_boss_name": "なし",
+        "story_image": "assets/story/stage1.jpg",
         "story_intro": (
             "深夜のアンダーシティ。冷たい酸性雨が降り注ぐ中、治安部隊として夜勤についていた"
             "詩音、サイファー、アイリーンの3人は、無線から不穏な緊急通報を受信した。\n\n"
@@ -179,6 +180,7 @@ STAGES_DATA = [
         "env_name": "ネオン・カジノ地区 (欲望と電脳の歓楽街)",
         "env_desc": "きらびやかなホログラムが明滅する歓楽街。マフィアの手先が立ち塞がる。",
         "prev_boss_name": "スラムの暴力王・ガレオン",
+        "story_image": "assets/story/stage2.jpg",
         "story_intro": (
             "スラム街の奥深くで「スラムの暴力王・ガレオン」を沈黙させた3人。\n"
             "ガレオンが残した端末のデータから、一連の事件の黒幕がネオン輝く歓楽街の裏で糸を引いていることが判明した。\n\n"
@@ -201,6 +203,7 @@ STAGES_DATA = [
         "env_name": "ハイテク工業プラント (自動化された無人工場)",
         "env_desc": "炎と蒸気が吹き出すメガコープの製造プラント。戦闘用ロボットが徘徊する。",
         "prev_boss_name": "カジノの支配人・ドン・バネッサ",
+        "story_image": "assets/story/stage3.jpg",
         "story_intro": (
             "華やかなカジノの奥で「ドン・バネッサ」を追い詰め、組織の隠し口座情報を押さえた3人。\n"
             "資金の流れを追うと、街外れのメガコープ直営プラントへと繋がっていた。\n\n"
@@ -222,6 +225,7 @@ STAGES_DATA = [
         "env_name": "地下下水道網 (汚染物質が流れ込む暗渠)",
         "env_desc": "悪臭と毒ガスが充満する地下水路。ミュータントや廃棄されたサイボーグが潜む。",
         "prev_boss_name": "プラント監視AI・アイアン・マザー",
+        "story_image": "assets/story/stage4.jpg",
         "story_intro": (
             "暴走する「アイアン・マザー」の中枢コアを破壊し、プラントの機能を停止させた3人。\n"
             "プラントから排泄される不正廃棄物のルートを辿ると、都市の地下迷宮へと続いていた。\n\n"
@@ -243,6 +247,7 @@ STAGES_DATA = [
         "env_name": "データ・サーバータワー (電脳の結界要塞)",
         "env_desc": "無数のサーバーラックが並ぶ仮想と現実の交差点。ネットセキュリティが襲い来る。",
         "prev_boss_name": "下水道の主・バイオキメラ",
+        "story_image": "assets/story/stage5.jpg",
         "story_intro": (
             "地下水路の奥で「バイオキメラ」を討伐した3人。\n"
             "その肉片から回収された暗号キーは、都市のデータ通信中枢であるタワーへアクセスするためのものだった。\n\n"
@@ -264,6 +269,7 @@ STAGES_DATA = [
         "env_name": "高級コーポレート街 (富裕層の高層ビル群)",
         "env_desc": "きらびやかな高層ガラス都市。エリート警備部隊と高級ドローンが警護する。",
         "prev_boss_name": "防衛AI・ガーディアン・プライム",
+        "story_image": "assets/story/stage6.jpg",
         "story_intro": (
             "データタワーの守護者「ガーディアン・プライム」をハッキングで打ち破った3人。\n"
             "タワーから抽出されたログは、富裕層が暮らす高級コーポレート街のビルへと繋がっていた。\n\n"
@@ -285,6 +291,7 @@ STAGES_DATA = [
         "env_name": "廃墟の実験施設 (禁忌の研究が行われた地)",
         "env_desc": "放棄された不気味な地下研究所。改造された異形の存在がうごめく。",
         "prev_boss_name": "治安維持本部長・ゼネラル・クロウ",
+        "story_image": "assets/story/stage7.jpg",
         "story_intro": (
             "腐敗した治安維持本部長「ゼネラル・クロウ」を撃破した3人。\n"
             "クロウが遺した機密ファイルには、都市の裏で行われていた禁忌の改造実験の記録が記されていた。\n\n"
@@ -306,6 +313,7 @@ STAGES_DATA = [
         "env_name": "オービタル・ステーション地上発着港 (宇宙へ続くロケット基地)",
         "env_desc": "夜空へ突き出る巨大ロケット発射基地。宇宙防衛軍と重武装ユニットが立ちはだかる。",
         "prev_boss_name": "狂気の科学者・ دکتر・サイコ",
+        "story_image": "assets/story/stage8.jpg",
         "story_intro": (
             "実験施設の奥で「Dr.サイコ」の野望を粉砕した3人。\n"
             "研究所のメインモニターには、宇宙へ向けて飛び立つロケットの打ち上げシークエンスが表示されていた。\n\n"
@@ -327,6 +335,7 @@ STAGES_DATA = [
         "env_name": "メガコープ・タワー最上階 (巨大企業の心臓部)",
         "env_desc": "雲を突き抜けた超高層オフィスの最上階。企業の最終防衛システムが待ち構える。",
         "prev_boss_name": "宇宙港司令官・ヴァルキリー",
+        "story_image": "assets/story/stage9.jpg",
         "story_intro": (
             "宇宙港で「ヴァルキリー」を退け、発射されたシャトルのアクセス権を奪還した3人。\n"
             "すべての黒幕が潜む、メガコープの本社タワー最上階へと進路を定めた。\n\n"
@@ -348,6 +357,7 @@ STAGES_DATA = [
         "env_name": "最終電脳空間・コア (世界の命運を握る中枢ネット)",
         "env_desc": "現実の物理法則を超越した電脳の深淵。すべての黒幕が待つ最終決戦の地。",
         "prev_boss_name": "取締役会会長・ゼウス",
+        "story_image": "assets/story/stage10.jpg",
         "story_intro": (
             "メガコープ会長「ゼウス」の肉体を追い詰めたものの、彼の意識は都市の中枢ネットへ逃走した。\n"
             "物質世界を離れ、現実の物理法則を超越した電脳の深淵へダイブする3人。\n\n"
@@ -400,7 +410,6 @@ def start_new_game():
         "skills": data["skills"],
     })
   st.session_state.last_enemy_action = None
-  # 新規ゲーム時はステージ1のストーリー確認画面へ
   st.session_state.game_state = "STAGE_STORY"
 
 
@@ -451,7 +460,6 @@ def draw_cards():
     st.session_state.hand = []
 
 
-# 評価点とランクの計算関数
 def calculate_score():
   stages_cleared = st.session_state.stage if st.session_state.game_state == "VICTORY" else max(0, st.session_state.stage - 1)
   alive_turns = st.session_state.all_three_alive_turns
@@ -506,6 +514,13 @@ elif st.session_state.game_state == "STAGE_STORY":
         unsafe_allow_html=True,
     )
     
+  # ストーリー用画像の表示
+  if "story_image" in s_data:
+    try:
+      st.image(s_data["story_image"], use_column_width=True)
+    except Exception:
+      st.caption(f"[ストーリー画像読み込みエラー: {s_data['story_image']}]")
+
   st.markdown(
       f"""<div class="story-box">
           <b>🌐 ステージ {st.session_state.stage}: {s_data['env_name']}</b><br><br>
@@ -528,7 +543,6 @@ elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
       unsafe_allow_html=True,
   )
 
-  # 戦闘不能キャラの復活セクション
   dead_allies = [a for a in st.session_state.allies if not a["alive"]]
   if dead_allies:
     st.markdown("### 💀 戦闘不能メンバーの復活")
@@ -557,7 +571,6 @@ elif st.session_state.game_state == "STAGE_CLEAR_REVIVE":
           st.rerun()
     st.markdown("---")
 
-  # 生存メンバーのステータス強化セクション
   st.markdown("### 🚀 味方エージェントのステータス強化 (1人選択)")
   st.markdown("お気に入りのキャラを選んで、最大HPと全スキルの威力を底上げしましょう！")
   
@@ -629,7 +642,6 @@ elif st.session_state.game_state == "BATTLE":
 
   col_ally, col_enemy = st.columns(2)
 
-  # 味方ステータス
   with col_ally:
     st.markdown("### 🟢 味方エージェント部隊")
     for a in st.session_state.allies:
@@ -652,7 +664,6 @@ elif st.session_state.game_state == "BATTLE":
       else:
         st.markdown(f"<s style='color:gray;'>{a['name']} (DEFEATED)</s>", unsafe_allow_html=True)
 
-  # 敵ステータス
   with col_enemy:
     st.markdown("### 🔴 遭遇した敵ターゲット")
     if e:
@@ -674,7 +685,6 @@ elif st.session_state.game_state == "BATTLE":
   st.markdown("---")
   st.markdown(f"### 🔋 RAM (コスト): {st.session_state.ram} / {st.session_state.max_ram}")
 
-  # 手札表示
   st.markdown("### 🃏 スキルカード (手札)")
   if st.session_state.hand:
     cols = st.columns(len(st.session_state.hand))
