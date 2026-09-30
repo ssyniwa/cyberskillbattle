@@ -517,7 +517,7 @@ elif st.session_state.game_state == "STAGE_STORY":
   # ストーリー用画像の表示
   if "story_image" in s_data:
     try:
-      st.image(s_data["story_image"], width=400)
+      st.image(s_data["story_image"], width=800)
     except Exception:
       st.caption(f"[ストーリー画像読み込みエラー: {s_data['story_image']}]")
 
@@ -848,7 +848,7 @@ elif st.session_state.game_state in ["VICTORY", "GAMEOVER"]:
   if is_win:
     # 結末の画像を表示
     try:
-      st.image("assets/story/end.jpg", width=400)
+      st.image("assets/story/end.jpg", width=800)
     except Exception:
       st.caption("[結末画像読み込みエラー: assets/story/end.jpg]")
 
