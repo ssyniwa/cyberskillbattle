@@ -846,6 +846,12 @@ elif st.session_state.game_state in ["VICTORY", "GAMEOVER"]:
   st.title("🏆 ミッション完全クリア (VICTORY)" if is_win else "💀 システムクラッシュ (GAME OVER)")
   
   if is_win:
+    # 結末の画像を表示
+    try:
+      st.image("assets/story/end.jpg", use_column_width=True)
+    except Exception:
+      st.caption("[結末画像読み込みエラー: assets/story/end.jpg]")
+
     st.markdown(
         """
         <div class="story-box" style="border-color: #00ffcc; margin-bottom: 20px;">
